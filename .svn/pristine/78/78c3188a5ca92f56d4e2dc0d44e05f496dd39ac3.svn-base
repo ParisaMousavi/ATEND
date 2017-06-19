@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Data.OleDb;
+using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.GraphicsInterface;
+using Autodesk.AutoCAD.DatabaseServices;
+using Autodesk.AutoCAD.Runtime;
+using Autodesk.AutoCAD.Geometry;
+//using Autodesk.AutoCAD.Interop;
+using Autodesk.Windows;
+using Autodesk.AutoCAD.Colors;
+
+
+namespace Atend.Global.Acad.DrawEquips
+{
+    public class AcDrawPhuse
+    {
+        
+        public class DrawPhuseJig : DrawJig
+        {
+
+            List<Entity> Entities = new List<Entity>();
+            Point3d CenterPoint = Point3d.Origin;
+            public Point3d MyCenterPoint
+            {
+                get { return CenterPoint; }
+            }
+
+            double MyScale = 1;
+
+            public DrawPhuseJig(double Scale)
+            {
+                MyScale = Scale;
+            }
+
+            protected override SamplerStatus Sampler(JigPrompts prompts)
+            {
+                return SamplerStatus.Cancel;
+            }
+
+            protected override bool WorldDraw(WorldDraw draw)
+            {
+                return true;
+            }
+
+            private Entity CreateLine(Point3d StartPoint, Point3d EndPoint, int ProductType, int ColorIndex, double Thickness)
+            {
+                Atend.Global.Acad.AcadJigs.MyLine mLine = new Atend.Global.Acad.AcadJigs.MyLine();
+                mLine.StartPoint = StartPoint;
+                mLine.EndPoint = EndPoint;
+
+                if (Thickness != 0)
+                {
+                    mLine.Thickness = Thickness;
+                }
+
+
+                Atend.Global.Acad.AcadJigs.SaveExtensionData(mLine, ProductType);
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(mLine, CodeGuid);
+                mLine.ColorIndex = ColorIndex;
+
+                return mLine;
+            }
+
+            private Entity CreateConnectionPoint(Point3d CenterPoint, double Radius)
+            {
+                Atend.Global.Acad.AcadJigs.MyCircle c = new Atend.Global.Acad.AcadJigs.MyCircle();
+
+                c.Center = CenterPoint;
+                c.Normal = new Vector3d(0, 0, 1);
+                c.Radius = Radius;
+                //c.ColorIndex = 3;
+
+                Atend.Global.Acad.AcadJigs.SaveExtensionData(c, (int)Atend.Control.Enum.ProductType.Disconnector);
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(c, CodeGuid);
+                return c;
+            }
+
+            private Entity CreateCellEntity(Point3d CenterPoint, double Width, double Height, int Type)
+            {
+
+                double BaseX = CenterPoint.X;
+                double BaseY = CenterPoint.Y;
+
+                Atend.Global.Acad.AcadJigs.MyPolyLine pLine = new Atend.Global.Acad.AcadJigs.MyPolyLine();
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - (Width / 2), BaseY - (Height / 2)), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX + (Width / 2), BaseY - (Height / 2)), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX + (Width / 2), BaseY + (Height / 2)), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - (Width / 2), BaseY + (Height / 2)), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - (Width / 2), BaseY - (Height / 2)), 0, 0, 0);
+                pLine.Closed = true;
+
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(pLine, Type);
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(pLine, (long)ProductCode);
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(pLine, CodeGuid);
+                return pLine;
+
+            }
+
+            public List<Entity> GetDemo(Point3d StartPoint, Point3d EndPoint)
+            {
+                Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+                LineSegment3d ls1 = new LineSegment3d(StartPoint, EndPoint);
+                Point3d BasePoint = ls1.MidPoint;
+                CenterPoint = BasePoint;
+                double Angle = new Line(StartPoint, EndPoint).Angle;
+
+                Entities.Add(CreateCellEntity(BasePoint, 10, 5, (int)Atend.Control.Enum.ProductType.Phuse));
+                Entities.Add(CreateLine(new Point3d(BasePoint.X - 5, BasePoint.Y, BasePoint.Z), new Point3d(BasePoint.X - 2, BasePoint.Y, BasePoint.Z), (int)Atend.Control.Enum.ProductType.Phuse, 0, 0));
+                Entities.Add(CreateLine(new Point3d(BasePoint.X + 5, BasePoint.Y, BasePoint.Z), new Point3d(BasePoint.X + 2, BasePoint.Y, BasePoint.Z), (int)Atend.Control.Enum.ProductType.Phuse, 0, 0));
+                Entities.Add(CreateLine(new Point3d(BasePoint.X - 2, BasePoint.Y, BasePoint.Z), new Point3d(BasePoint.X + 2, BasePoint.Y + 2, BasePoint.Z), (int)Atend.Control.Enum.ProductType.Phuse, 0, 0));
+
+                Entities.Add(CreateLine(new Point3d(BasePoint.X + 2, BasePoint.Y + 0.5, BasePoint.Z), new Point3d(BasePoint.X + 2, BasePoint.Y - 0.5, BasePoint.Z), (int)Atend.Control.Enum.ProductType.Phuse, 0, 0));
+                Matrix3d trans = Matrix3d.Rotation(Angle, ed.CurrentUserCoordinateSystem.CoordinateSystem3d.Zaxis,
+                                   new Point3d(BasePoint.X, BasePoint.Y, 0));
+
+                foreach (Entity en in Entities)
+                {
+                    en.TransformBy(trans);
+                }
+
+                Matrix3d trans1 = Matrix3d.Scaling(MyScale, new Point3d(BasePoint.X, BasePoint.Y, 0));
+                foreach (Entity en in Entities)
+                {
+                    en.TransformBy(trans1);
+                }
+
+                Entity FinalLine = CreateLine(new Point3d(StartPoint.X, StartPoint.Y, StartPoint.Z), new Point3d(EndPoint.X, EndPoint.Y, EndPoint.Z), (int)Atend.Control.Enum.ProductType.Terminal, 0, 0);
+                Entities.Add(FinalLine);
+                return Entities;
+            }
+
+        }
+
+        //~~~~~~~~~~~~~~~~~~~Method~~~~~~~~~~~~~~
+
+    }
+}

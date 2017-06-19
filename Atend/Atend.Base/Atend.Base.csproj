@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB3BCF87-7222-4951-851F-7ABB831BA8C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atend.Base</RootNamespace>
+    <AssemblyName>Atend.Base</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\accoremgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcCui, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\AcCui.dll</HintPath>
+    </Reference>
+    <Reference Include="acdbmgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\acdbmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="acmgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\acmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="Atend2Electrical, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Atend2Electrical.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Printing, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\System.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\WindowsBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acad\AcadGlobal.cs" />
+    <Compile Include="Acad\AT_COUNTER.cs" />
+    <Compile Include="Acad\AT_INFO.cs" />
+    <Compile Include="Acad\AT_SUB.cs" />
+    <Compile Include="Base\BDBVersion.cs" />
+    <Compile Include="Base\BEquipStatus.cs" />
+    <Compile Include="Base\BStatusWorkOrder.cs" />
+    <Compile Include="Base\BRegion.cs" />
+    <Compile Include="Base\XXBDepartment.cs" />
+    <Compile Include="Base\BDesignPlanWorkOrder.cs" />
+    <Compile Include="Base\XXBOperationType.cs" />
+    <Compile Include="Base\BPlan.cs" />
+    <Compile Include="Base\BProduct.cs" />
+    <Compile Include="Base\XXBProductBlock.cs" />
+    <Compile Include="Base\BProjectCode.cs" />
+    <Compile Include="Base\BReport.cs" />
+    <Compile Include="Base\BSetting.cs" />
+    <Compile Include="Base\XXBSqlServer.cs" />
+    <Compile Include="Base\XXBTariffHeader.cs" />
+    <Compile Include="Base\BUnit.cs" />
+    <Compile Include="Base\BWorkOrder.cs" />
+    <Compile Include="Base\BDesignPlan.cs" />
+    <Compile Include="Calculating\CDloadFactor.cs" />
+    <Compile Include="Calculating\CKE.cs" />
+    <Compile Include="Calculating\CLoadFactor.cs" />
+    <Compile Include="Calculating\CNetWorkcross.cs" />
+    <Compile Include="Calculating\CDefaultMec.cs" />
+    <Compile Include="Calculating\CConductorDay.cs" />
+    <Compile Include="Calculating\CDistributedLoadNode.cs" />
+    <Compile Include="Calculating\CDistributedLoadBranch.cs" />
+    <Compile Include="Calculating\CDefaultRudSurface.cs" />
+    <Compile Include="Calculating\CHalter.cs" />
+    <Compile Include="Calculating\CMaxTension.cs" />
+    <Compile Include="Calculating\CShortCircuit.cs" />
+    <Compile Include="Calculating\CPowerWithOutHalter.cs" />
+    <Compile Include="Calculating\CPowerWithHalter.cs" />
+    <Compile Include="Calculating\CPower.cs" />
+    <Compile Include="Calculating\CRudSurface.cs" />
+    <Compile Include="Calculating\CTransBranch.cs" />
+    <Compile Include="Calculating\CTransPower.cs" />
+    <Compile Include="Calculating\CTransCurrent.cs" />
+    <Compile Include="Calculating\CTransformer.cs" />
+    <Compile Include="Calculating\CCrossSection.cs" />
+    <Compile Include="Calculating\CSetDefaultElec.cs" />
+    <Compile Include="Calculating\CTemp.cs" />
+    <Compile Include="Calculating\CStartEnd.cs" />
+    <Compile Include="Calculating\CSetDefaultMecc.cs" />
+    <Compile Include="Calculating\CWindOnPole.cs" />
+    <Compile Include="Calculating\CSagAndTension.cs" />
+    <Compile Include="Calculating\CPackageLoad.cs" />
+    <Compile Include="Calculating\Test.cs" />
+    <Compile Include="Design\DPrintSize.cs" />
+    <Compile Include="Design\DWorkOrder.cs" />
+    <Compile Include="Design\DKeyStatus.cs" />
+    <Compile Include="Design\XXCoductorTransaction.cs" />
+    <Compile Include="Design\DGlobal.cs" />
+    <Compile Include="Design\DAccess.cs" />
+    <Compile Include="Design\DCellStatus.cs" />
+    <Compile Include="Design\DConsol.cs" />
+    <Compile Include="Design\DDesignProfile.cs" />
+    <Compile Include="Design\XXDEquipLayer.cs" />
+    <Compile Include="Design\XXDLayer.cs" />
+    <Compile Include="Design\DNumberingSystem.cs" />
+    <Compile Include="Design\DPoleSection.cs" />
+    <Compile Include="Design\DPost.cs" />
+    <Compile Include="Design\DProductSubEquip.cs" />
+    <Compile Include="Design\DRemark.cs" />
+    <Compile Include="Design\DSection.cs" />
+    <Compile Include="Design\DStatusReport.cs" />
+    <Compile Include="Design\DUserAccess.cs" />
+    <Compile Include="Design\DBranch.cs" />
+    <Compile Include="Design\DDesign.cs" />
+    <Compile Include="Design\DDesignFile.cs" />
+    <Compile Include="Design\XXDDesignSetting.cs" />
+    <Compile Include="Design\DEquipmentSetting.cs" />
+    <Compile Include="Design\DNode.cs" />
+    <Compile Include="Design\DPackage.cs" />
+    <Compile Include="Design\DPoleInfo.cs" />
+    <Compile Include="Design\DSettingValue.cs" />
+    <Compile Include="Design\DUser.cs" />
+    <Compile Include="Design\DWeather.cs" />
+    <Compile Include="Design\DWeatherConditionType.cs" />
+    <Compile Include="Design\DWeatherType.cs" />
+    <Compile Include="Design\XXJumperTransaction.cs" />
+    <Compile Include="Design\NodeTransaction.cs" />
+    <Compile Include="Design\DProductProperties.cs" />
+    <Compile Include="Equipment\EArm.cs" />
+    <Compile Include="Equipment\EDBPhuse.cs" />
+    <Compile Include="Equipment\EFloor.cs" />
+    <Compile Include="Equipment\EGround.cs" />
+    <Compile Include="Equipment\EGroundCabelTip.cs" />
+    <Compile Include="Equipment\EHalter.cs" />
+    <Compile Include="Equipment\EInsulatorChain.cs" />
+    <Compile Include="Equipment\EInsulatorPipe.cs" />
+    <Compile Include="Equipment\ELight.cs" />
+    <Compile Include="Equipment\EMeasuredJackPanel.cs" />
+    <Compile Include="Equipment\EProp.cs" />
+    <Compile Include="Equipment\EClamp.cs" />
+    <Compile Include="Equipment\EKablsho.cs" />
+    <Compile Include="Equipment\EPoleTip.cs" />
+    <Compile Include="Equipment\ERamp.cs" />
+    <Compile Include="Equipment\EReCloser.cs" />
+    <Compile Include="Equipment\ESelfKeeperTip.cs" />
+    <Compile Include="Equipment\ESelfKeeper.cs" />
+    <Compile Include="Equipment\ECell.cs" />
+    <Compile Include="Equipment\EConductorTip.cs" />
+    <Compile Include="Equipment\EJackPanelWeekCell.cs" />
+    <Compile Include="Equipment\EJackPanelWeek.cs" />
+    <Compile Include="Equipment\EKhazanTip.cs" />
+    <Compile Include="Equipment\EMiniatorKey.cs" />
+    <Compile Include="Equipment\EMafsal.cs" />
+    <Compile Include="Equipment\EAirPost.cs" />
+    <Compile Include="Equipment\EAutoKey_3p.cs" />
+    <Compile Include="Equipment\EBreaker.cs" />
+    <Compile Include="Equipment\EBus.cs" />
+    <Compile Include="Equipment\ECatOut.cs" />
+    <Compile Include="Equipment\EConductor.cs" />
+    <Compile Include="Equipment\EConsol.cs" />
+    <Compile Include="Equipment\EContainerPackage.cs" />
+    <Compile Include="Equipment\ECountor.cs" />
+    <Compile Include="Equipment\ECT.cs" />
+    <Compile Include="Equipment\EDB.cs" />
+    <Compile Include="Equipment\EDisconnector.cs" />
+    <Compile Include="Equipment\EGroundPost.cs" />
+    <Compile Include="Equipment\EHeaderCabel.cs" />
+    <Compile Include="Equipment\EInsulator.cs" />
+    <Compile Include="Equipment\EJAckPanel.cs" />
+    <Compile Include="Equipment\EJackPanelCell.cs" />
+    <Compile Include="Equipment\EGroundCabel.cs" />
+    <Compile Include="Equipment\EOperation.cs" />
+    <Compile Include="Equipment\EPhotoCell.cs" />
+    <Compile Include="Equipment\EPhuse.cs" />
+    <Compile Include="Equipment\EPhuseKey.cs" />
+    <Compile Include="Equipment\EPhusePole.cs" />
+    <Compile Include="Equipment\EPole.cs" />
+    <Compile Include="Equipment\EProductPackage.cs" />
+    <Compile Include="Equipment\EPT.cs" />
+    <Compile Include="Equipment\ERod.cs" />
+    <Compile Include="Equipment\ESectionLizer.cs" />
+    <Compile Include="Equipment\EStreetBox.cs" />
+    <Compile Include="Equipment\EStreetBoxPhuse.cs" />
+    <Compile Include="Equipment\ETransformer.cs" />
+    <Compile Include="Equipment\EKhazan.cs" />
+    <Compile Include="GIS\GPole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atend.Control\Atend.Control.csproj">
+      <Project>{83C9DE81-69D6-4F75-8801-ABE6CF1EFC09}</Project>
+      <Name>Atend.Control</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

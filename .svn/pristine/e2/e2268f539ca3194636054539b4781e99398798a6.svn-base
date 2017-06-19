@@ -1,0 +1,2704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1867D499-E9A9-4826-8B4B-84A750C711D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atend</RootNamespace>
+    <AssemblyName>Atend</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcCui, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcCui.dll</HintPath>
+    </Reference>
+    <Reference Include="AcDbMgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcDbMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="acdbmgdbrep, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\acdbmgdbrep.dll</HintPath>
+    </Reference>
+    <Reference Include="AcDx, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcDx.dll</HintPath>
+    </Reference>
+    <Reference Include="AcInfoCenterConn, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcInfoCenterConn.DLL</HintPath>
+    </Reference>
+    <Reference Include="AcInfoCenterConn.resources, Version=17.2.0.0, Culture=en-US, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcInfoCenterConn.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="AcMgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcRibbon, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcRibbon.dll</HintPath>
+    </Reference>
+    <Reference Include="AcWindows, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="AdInfoCenter, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AdInfoCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="AdskRibbon, Version=1.0.3186.21173, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AdskRibbon.dll</HintPath>
+    </Reference>
+    <Reference Include="AdWindows, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AdWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="Atend2Electrical, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Atend2Electrical.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop, Version=17.2.0.0, Culture=neutral, PublicKeyToken=eed84259d7cbf30b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\ObjectArx 2009\inc-win32\Autodesk.AutoCAD.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop.Common, Version=17.2.0.0, Culture=neutral, PublicKeyToken=eed84259d7cbf30b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\ObjectArx 2009\inc-win32\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1TrueDBGrid.2, Version=2.0.20092.61165, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\User\My Documents\Visual Studio 2005\Projects\Atend\Atend\bin\Debug\C1.Win.C1TrueDBGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Office, Version=2.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Interop.Office.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VBIDE, Version=5.3.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Interop.VBIDE.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Word, Version=8.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dlls\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="pdflib_dotnet, Version=7.0.3.12, Culture=neutral, PublicKeyToken=af0805f2b25bb299">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\pdflib_dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllS\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllS\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllS\System.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllS\WindowsBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acad\AcadCommands.cs" />
+    <Compile Include="Acad\AcadMove.cs" />
+    <Compile Include="Acad\Ribbon.cs" />
+    <Compile Include="Base\frmBSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmBSetting.Designer.cs">
+      <DependentUpon>frmBSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmDesignProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmDesignProfile.Designer.cs">
+      <DependentUpon>frmDesignProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmEquipStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmEquipStatus.Designer.cs">
+      <DependentUpon>frmEquipStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmEquipStatusSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmEquipStatusSearch.Designer.cs">
+      <DependentUpon>frmEquipStatusSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmPreparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmPreparation.Designer.cs">
+      <DependentUpon>frmPreparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmProductSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmProductSearch.designer.cs">
+      <DependentUpon>frmProductSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmProjectCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmProjectCode.Designer.cs">
+      <DependentUpon>frmProjectCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmProjectCodeParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmProjectCodeParent.Designer.cs">
+      <DependentUpon>frmProjectCodeParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmProjectCodeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmProjectCodeSearch.Designer.cs">
+      <DependentUpon>frmProjectCodeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmHalterComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmHalterComment.Designer.cs">
+      <DependentUpon>frmHalterComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmCrossSectionComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmCrossSectionComment.Designer.cs">
+      <DependentUpon>frmCrossSectionComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionMaxF02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionMaxF02.Designer.cs">
+      <DependentUpon>frmOptimalSagTensionMaxF02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionVTS02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionVTS02.Designer.cs">
+      <DependentUpon>frmOptimalSagTensionVTS02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmHalterResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmHalterResult.Designer.cs">
+      <DependentUpon>frmHalterResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmHalter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmHalter.Designer.cs">
+      <DependentUpon>frmHalter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmAutoPoleInstallation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmAutoPoleInstallation.Designer.cs">
+      <DependentUpon>frmAutoPoleInstallation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmCalculationDefault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmCalculationDefault.Designer.cs">
+      <DependentUpon>frmCalculationDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmChoiceForce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmChoiceForce.Designer.cs">
+      <DependentUpon>frmChoiceForce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionVTSTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionVTSTest.Designer.cs">
+      <DependentUpon>frmOptimalSagTensionVTSTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmRudSurface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmRudSurface.Designer.cs">
+      <DependentUpon>frmRudSurface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmRudSurfaceGraphic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmRudSurfaceGraphic.Designer.cs">
+      <DependentUpon>frmRudSurfaceGraphic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmSetDefaultMec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmSetDefaultMec.Designer.cs">
+      <DependentUpon>frmSetDefaultMec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmShortCircuitResult1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmShortCircuitResult1.Designer.cs">
+      <DependentUpon>frmShortCircuitResult1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmShortCircuitResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmShortCircuitResult.Designer.cs">
+      <DependentUpon>frmShortCircuitResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmCrossSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmCrossSection.Designer.cs">
+      <DependentUpon>frmCrossSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmCrossSectionResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmCrossSectionResult.Designer.cs">
+      <DependentUpon>frmCrossSectionResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmElecterical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmElecterical.Designer.cs">
+      <DependentUpon>frmElecterical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmElectericalResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmElectericalResult.Designer.cs">
+      <DependentUpon>frmElectericalResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmLoad.Designer.cs">
+      <DependentUpon>frmLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmLoadCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmLoadCount.Designer.cs">
+      <DependentUpon>frmLoadCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmLoadFactorSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmLoadFactorSearch.designer.cs">
+      <DependentUpon>frmLoadFactorSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmLoadFactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmLoadFactor.designer.cs">
+      <DependentUpon>frmLoadFactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionMaxF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionMaxF.Designer.cs">
+      <DependentUpon>frmOptimalSagTensionMaxF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmNetWorkCrossSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmNetWorkCrossSearch.designer.cs">
+      <DependentUpon>frmNetWorkCrossSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmNetWorkCross.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmNetWorkCross.designer.cs">
+      <DependentUpon>frmNetWorkCross.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmShortCircuit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmShortCircuit.Designer.cs">
+      <DependentUpon>frmShortCircuit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmTransCapacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmTransCapacity.Designer.cs">
+      <DependentUpon>frmTransCapacity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmTransCapacityResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmTransCapacityResult.Designer.cs">
+      <DependentUpon>frmTransCapacityResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditAngle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditAngle.Designer.cs">
+      <DependentUpon>frmEditAngle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditConsol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditConsol.Designer.cs">
+      <DependentUpon>frmEditConsol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawConsol02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawConsol02.Designer.cs">
+      <DependentUpon>frmDrawConsol02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDesignSaveServer02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDesignSaveServer02.Designer.cs">
+      <DependentUpon>frmDesignSaveServer02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDesignSaveAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDesignSaveAs.Designer.cs">
+      <DependentUpon>frmDesignSaveAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDesignSaveServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDesignSaveServer.Designer.cs">
+      <DependentUpon>frmDesignSaveServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawDB03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawDB03.Designer.cs">
+      <DependentUpon>frmDrawDB03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawFrame.Designer.cs">
+      <DependentUpon>frmDrawFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawGround02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawGround02.Designer.cs">
+      <DependentUpon>frmDrawGround02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawLight03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawLight03.Designer.cs">
+      <DependentUpon>frmDrawLight03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawTerminal.Designer.cs">
+      <DependentUpon>frmDrawTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawAirPost02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawAirPost02.Designer.cs">
+      <DependentUpon>frmEditDrawAirPost02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawCatout03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawCatout03.Designer.cs">
+      <DependentUpon>frmEditDrawCatout03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawDB03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawDB03.Designer.cs">
+      <DependentUpon>frmEditDrawDB03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGround02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGround02.Designer.cs">
+      <DependentUpon>frmEditDrawGround02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawLight02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawLight02.Designer.cs">
+      <DependentUpon>frmEditDrawLight02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawMeasuredJackPanel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawMeasuredJackPanel02.Designer.cs">
+      <DependentUpon>frmEditDrawMeasuredJackPanel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmFile.Designer.cs">
+      <DependentUpon>frmFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawMeasuredJackPanel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawMeasuredJackPanel02.Designer.cs">
+      <DependentUpon>frmDrawMeasuredJackPanel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmInterface.Designer.cs">
+      <DependentUpon>frmInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmArmSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmArmSearch02.Designer.cs">
+      <DependentUpon>frmArmSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmArm02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmArm02.Designer.cs">
+      <DependentUpon>frmArm02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorPipeSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorPipeSearch02.Designer.cs">
+      <DependentUpon>frmInsulatorPipeSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorPipe02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorPipe02.Designer.cs">
+      <DependentUpon>frmInsulatorPipe02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPropSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPropSearch02.Designer.cs">
+      <DependentUpon>frmPropSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmProp02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmProp02.Designer.cs">
+      <DependentUpon>frmProp02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmRampSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmRampSearch02.Designer.cs">
+      <DependentUpon>frmRampSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmJackPanelWeekSearch03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmJackPanelWeekSearch03.Designer.cs">
+      <DependentUpon>frmJackPanelWeekSearch03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmJackPanelWeek03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmJackPanelWeek03.Designer.cs">
+      <DependentUpon>frmJackPanelWeek03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmDB03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmDB03.Designer.cs">
+      <DependentUpon>frmDB03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmDBSearch03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmDBSearch03.Designer.cs">
+      <DependentUpon>frmDBSearch03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmFloor03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmFloor03.Designer.cs">
+      <DependentUpon>frmFloor03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmFloorSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmFloorSearch02.Designer.cs">
+      <DependentUpon>frmFloorSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGround02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGround02.Designer.cs">
+      <DependentUpon>frmGround02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundSearch02.Designer.cs">
+      <DependentUpon>frmGroundSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmHalter03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmHalter03.Designer.cs">
+      <DependentUpon>frmHalter03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmHalterSearch03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmHalterSearch03.Designer.cs">
+      <DependentUpon>frmHalterSearch03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmLight02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmLight02.Designer.cs">
+      <DependentUpon>frmLight02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmLightSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmLightSearch02.Designer.cs">
+      <DependentUpon>frmLightSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmMeasuredJackPanel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmMeasuredJackPanel02.Designer.cs">
+      <DependentUpon>frmMeasuredJackPanel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmMeasuredJackPanelSearch02.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmMeasuredJackPanelSearch02.cs.Designer.cs">
+      <DependentUpon>frmMeasuredJackPanelSearch02.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmOperation02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmOperation02.Designer.cs">
+      <DependentUpon>frmOperation02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmOperationSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmOperationSearch02.Designer.cs">
+      <DependentUpon>frmOperationSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawGroundPost03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawGroundPost03.Designer.cs">
+      <DependentUpon>frmDrawGroundPost03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawPoleTip03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawPoleTip03.Designer.cs">
+      <DependentUpon>frmDrawPoleTip03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawGroundCabelTip03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawGroundCabelTip03.Designer.cs">
+      <DependentUpon>frmDrawGroundCabelTip03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawPoleTip02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawPoleTip02.Designer.cs">
+      <DependentUpon>frmEditDrawPoleTip02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawBreaker02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawBreaker02.Designer.cs">
+      <DependentUpon>frmDrawBreaker02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawBreaker02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawBreaker02.Designer.cs">
+      <DependentUpon>frmEditDrawBreaker02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawCatOut02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawCatOut02.Designer.cs">
+      <DependentUpon>frmEditDrawCatOut02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawDisconnector02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawDisconnector02.Designer.cs">
+      <DependentUpon>frmEditDrawDisconnector02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKablsho02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKablsho02.Designer.cs">
+      <DependentUpon>frmEditDrawKablsho02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEquipLayer02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEquipLayer02.designer.cs">
+      <DependentUpon>frmEquipLayer02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawKablsho02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawKablsho02.Designer.cs">
+      <DependentUpon>frmDrawKablsho02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawClamp02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawClamp02.Designer.cs">
+      <DependentUpon>frmDrawClamp02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawHeaderCable02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawHeaderCable02.Designer.cs">
+      <DependentUpon>frmDrawHeaderCable02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawClamp02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawClamp02.Designer.cs">
+      <DependentUpon>frmEditDrawClamp02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawHeaderCable02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawHeaderCable02.Designer.cs">
+      <DependentUpon>frmEditDrawHeaderCable02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawStreetBox02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawStreetBox02.Designer.cs">
+      <DependentUpon>frmEditDrawStreetBox02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmGetFromServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmGetFromServer.Designer.cs">
+      <DependentUpon>frmGetFromServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmOpenDesign02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmOpenDesign02.Designer.cs">
+      <DependentUpon>frmOpenDesign02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmNewDesign02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmNewDesign02.Designer.cs">
+      <DependentUpon>frmNewDesign02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmSettingServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmSettingServer.Designer.cs">
+      <DependentUpon>frmSettingServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawAirPost02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawAirPost02.Designer.cs">
+      <DependentUpon>frmDrawAirPost02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawCatOut02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawCatOut02.Designer.cs">
+      <DependentUpon>frmDrawCatOut02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawDisconnector02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawDisconnector02.Designer.cs">
+      <DependentUpon>frmDrawDisconnector02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawKhazan02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawKhazan02.Designer.cs">
+      <DependentUpon>frmDrawKhazan02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawPole03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawPole03.Designer.cs">
+      <DependentUpon>frmDrawPole03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawRod02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawRod02.Designer.cs">
+      <DependentUpon>frmDrawRod02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawSelfKeeper02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawSelfKeeper02.Designer.cs">
+      <DependentUpon>frmDrawSelfKeeper02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawStreetBox02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawStreetBox02.Designer.cs">
+      <DependentUpon>frmDrawStreetBox02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawBranch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawBranch02.Designer.cs">
+      <DependentUpon>frmEditDrawBranch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundCable02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundCable02.Designer.cs">
+      <DependentUpon>frmEditDrawGroundCable02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundPost02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundPost02.Designer.cs">
+      <DependentUpon>frmEditDrawGroundPost02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKhazan02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKhazan02.Designer.cs">
+      <DependentUpon>frmEditDrawKhazan02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawPole02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawPole02.Designer.cs">
+      <DependentUpon>frmEditDrawPole02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawRod02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawRod02.Designer.cs">
+      <DependentUpon>frmEditDrawRod02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditSingleBranch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditSingleBranch02.Designer.cs">
+      <DependentUpon>frmEditSingleBranch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmUserAccessibility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmUserAccessibility.Designer.cs">
+      <DependentUpon>frmUserAccessibility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabelTip02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabelTip02.Designer.cs">
+      <DependentUpon>frmGroundCabelTip02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabelTipSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabelTipSearch02.Designer.cs">
+      <DependentUpon>frmGroundCabelTipSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorChain02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorChain02.Designer.cs">
+      <DependentUpon>frmInsulatorChain02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorChainSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorChainSearch02.Designer.cs">
+      <DependentUpon>frmInsulatorChainSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmKablshoSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmKablshoSearch02.Designer.cs">
+      <DependentUpon>frmKablshoSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmKablsho02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmKablsho02.Designer.cs">
+      <DependentUpon>frmKablsho02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmClamp02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmClamp02.Designer.cs">
+      <DependentUpon>frmClamp02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmClampSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmClampSearch02.Designer.cs">
+      <DependentUpon>frmClampSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmHeaderCabel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmHeaderCabel02.Designer.cs">
+      <DependentUpon>frmHeaderCabel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmHeaderCabelSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmHeaderCabelSearch02.Designer.cs">
+      <DependentUpon>frmHeaderCabelSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhuseKey02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhuseKey02.Designer.cs">
+      <DependentUpon>frmPhuseKey02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhuseKeySearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhuseKeySearch02.Designer.cs">
+      <DependentUpon>frmPhuseKeySearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPoleTip02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPoleTip02.Designer.cs">
+      <DependentUpon>frmPoleTip02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPoleTipSearch02.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPoleTipSearch02.cs.Designer.cs">
+      <DependentUpon>frmPoleTipSearch02.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmRamp02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmRamp02.Designer.cs">
+      <DependentUpon>frmRamp02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmAirPostDiagramReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmAirPostDiagramReport.designer.cs">
+      <DependentUpon>frmAirPostDiagramReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmBranchReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmBranchReport.designer.cs">
+      <DependentUpon>frmBranchReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmChoiceReportElec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmChoiceReportElec.designer.cs">
+      <DependentUpon>frmChoiceReportElec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmChoiceReportMec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmChoiceReportMec.designer.cs">
+      <DependentUpon>frmChoiceReportMec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmConsolDiagramReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmConsolDiagramReport.designer.cs">
+      <DependentUpon>frmConsolDiagramReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmCrossSectionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmCrossSectionReport.designer.cs">
+      <DependentUpon>frmCrossSectionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmDiagramReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmDiagramReport.designer.cs">
+      <DependentUpon>frmDiagramReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmGISForm1Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmGISForm1Report.Designer.cs">
+      <DependentUpon>frmGISForm1Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmGISSelectReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmGISSelectReport.Designer.cs">
+      <DependentUpon>frmGISSelectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmGroundPostDiagramReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmGroundPostDiagramReport.designer.cs">
+      <DependentUpon>frmGroundPostDiagramReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmNodeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmNodeReport.designer.cs">
+      <DependentUpon>frmNodeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmPoleForceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmPoleForceReport.designer.cs">
+      <DependentUpon>frmPoleForceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmPoleWithHalterReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmPoleWithHalterReport.designer.cs">
+      <DependentUpon>frmPoleWithHalterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmPoleWithoutHalterReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmPoleWithoutHalterReport.designer.cs">
+      <DependentUpon>frmPoleWithoutHalterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmRemarkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmRemarkReport.designer.cs">
+      <DependentUpon>frmRemarkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmRudSurfaceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmRudSurfaceReport.designer.cs">
+      <DependentUpon>frmRudSurfaceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmSagAndTensionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmSagAndTensionReport.designer.cs">
+      <DependentUpon>frmSagAndTensionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmSelectReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmSelectReports.designer.cs">
+      <DependentUpon>frmSelectReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmStatusReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmStatusReport.designer.cs">
+      <DependentUpon>frmStatusReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmTranseInfoReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmTranseInfoReport.designer.cs">
+      <DependentUpon>frmTranseInfoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmViewReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmViewReport.designer.cs">
+      <DependentUpon>frmViewReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceImage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceImage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ucProduct02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProduct02.designer.cs">
+      <DependentUpon>ucProduct02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDesignSearch01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDesignSearch01.Designer.cs">
+      <DependentUpon>frmDesignSearch01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmChangeCellStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmChangeCellStatus.Designer.cs">
+      <DependentUpon>frmChangeCellStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundCable.Designer.cs">
+      <DependentUpon>frmEditDrawGroundCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundPost.Designer.cs">
+      <DependentUpon>frmEditDrawGroundPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundPost01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawGroundPost01.Designer.cs">
+      <DependentUpon>frmEditDrawGroundPost01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawSelfKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawSelfKeeper.Designer.cs">
+      <DependentUpon>frmEditDrawSelfKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawPole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawPole.Designer.cs">
+      <DependentUpon>frmEditDrawPole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKhazan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKhazan.Designer.cs">
+      <DependentUpon>frmEditDrawKhazan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawBranch01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawBranch01.Designer.cs">
+      <DependentUpon>frmEditDrawBranch01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDesignSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDesignSave.Designer.cs">
+      <DependentUpon>frmDesignSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawBranch01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawBranch01.Designer.cs">
+      <DependentUpon>frmDrawBranch01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionVTS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculating\frmOptimalSagTensionVTS.Designer.cs">
+      <DependentUpon>frmOptimalSagTensionVTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmUserSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmUserSearch.Designer.cs">
+      <DependentUpon>frmUserSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmWeather.Designer.cs">
+      <DependentUpon>frmWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frm20kvJackPanel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frm20kvJackPanel02.Designer.cs">
+      <DependentUpon>frm20kvJackPanel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frm20kvJackPanelSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frm20kvJackPanelSearch02.Designer.cs">
+      <DependentUpon>frm20kvJackPanelSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frm20KvProductSelect02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frm20KvProductSelect02.Designer.cs">
+      <DependentUpon>frm20KvProductSelect02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmConsolSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmConsolSearch02.Designer.cs">
+      <DependentUpon>frmConsolSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCountor02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCountor02.Designer.cs">
+      <DependentUpon>frmCountor02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCountorSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCountorSearch02.Designer.cs">
+      <DependentUpon>frmCountorSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCT02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCT02.Designer.cs">
+      <DependentUpon>frmCT02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCTSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCTSearch02.Designer.cs">
+      <DependentUpon>frmCTSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmDisconnector02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmDisconnector02.Designer.cs">
+      <DependentUpon>frmDisconnector02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmDisconnectorSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmDisconnectorSearch02.Designer.cs">
+      <DependentUpon>frmDisconnectorSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabel02.Designer.cs">
+      <DependentUpon>frmGroundCabel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabelSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundCabelSearch02.Designer.cs">
+      <DependentUpon>frmGroundCabelSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundPost02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundPost02.Designer.cs">
+      <DependentUpon>frmGroundPost02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmGroundPostSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmGroundPostSearch02.Designer.cs">
+      <DependentUpon>frmGroundPostSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmInsulator02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmInsulator02.Designer.cs">
+      <DependentUpon>frmInsulator02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmInsulatorSearch02.Designer.cs">
+      <DependentUpon>frmInsulatorSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmKhazan02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmKhazan02.designer.cs">
+      <DependentUpon>frmKhazan02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmKhazanSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmKhazanSearch02.designer.cs">
+      <DependentUpon>frmKhazanSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmConductorTipSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmConductorTipSearch02.Designer.cs">
+      <DependentUpon>frmConductorTipSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmConsol02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmConsol02.Designer.cs">
+      <DependentUpon>frmConsol02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmKhazanTip02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmKhazanTip02.Designer.cs">
+      <DependentUpon>frmKhazanTip02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmKhazanTipSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmKhazanTipSearch02.Designer.cs">
+      <DependentUpon>frmKhazanTipSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmConductorTip02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmConductorTip02.Designer.cs">
+      <DependentUpon>frmConductorTip02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmMafsal02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmMafsal02.designer.cs">
+      <DependentUpon>frmMafsal02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmMafsalSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmMafsalSearch02.designer.cs">
+      <DependentUpon>frmMafsalSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmMiniatorKey02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmMiniatorKey02.designer.cs">
+      <DependentUpon>frmMiniatorKey02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmMiniatorKeySearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmMiniatorKeySearch02.designer.cs">
+      <DependentUpon>frmMiniatorKeySearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhotoCell02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhotoCell02.designer.cs">
+      <DependentUpon>frmPhotoCell02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhotoCellSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhotoCellSearch02.designer.cs">
+      <DependentUpon>frmPhotoCellSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhuse02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhuse02.designer.cs">
+      <DependentUpon>frmPhuse02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhuseSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhuseSearch02.designer.cs">
+      <DependentUpon>frmPhuseSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhusePole02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhusePole02.designer.cs">
+      <DependentUpon>frmPhusePole02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPhusePoleSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPhusePoleSearch02.designer.cs">
+      <DependentUpon>frmPhusePoleSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmBreakerSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmBreakerSearch02.Designer.cs">
+      <DependentUpon>frmBreakerSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmBus02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmBus02.Designer.cs">
+      <DependentUpon>frmBus02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmBusSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmBusSearch02.Designer.cs">
+      <DependentUpon>frmBusSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCabel02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCabel02.Designer.cs">
+      <DependentUpon>frmCabel02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCabelSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCabelSearch02.Designer.cs">
+      <DependentUpon>frmCabelSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCatOut02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCatOut02.Designer.cs">
+      <DependentUpon>frmCatOut02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCatOutSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCatOutSearch02.Designer.cs">
+      <DependentUpon>frmCatOutSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCell02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCell02.Designer.cs">
+      <DependentUpon>frmCell02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmCellSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmCellSearch02.Designer.cs">
+      <DependentUpon>frmCellSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmConductor02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmConductor02.Designer.cs">
+      <DependentUpon>frmConductor02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmConductorSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmConductorSearch02.Designer.cs">
+      <DependentUpon>frmConductorSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPole02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPole02.designer.cs">
+      <DependentUpon>frmPole02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPoleSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPoleSearch02.designer.cs">
+      <DependentUpon>frmPoleSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPT02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPT02.designer.cs">
+      <DependentUpon>frmPT02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmPTSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmPTSearch02.designer.cs">
+      <DependentUpon>frmPTSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmAutoKey3p02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmAutoKey3p02.Designer.cs">
+      <DependentUpon>frmAutoKey3p02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmAutoKeySearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmAutoKeySearch02.Designer.cs">
+      <DependentUpon>frmAutoKeySearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmBreaker02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmBreaker02.Designer.cs">
+      <DependentUpon>frmBreaker02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmReCloser02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmReCloser02.designer.cs">
+      <DependentUpon>frmReCloser02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmRecloserSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmRecloserSearch02.designer.cs">
+      <DependentUpon>frmRecloserSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmAirPostSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmAirPostSearch02.Designer.cs">
+      <DependentUpon>frmAirPostSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmRod02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmRod02.designer.cs">
+      <DependentUpon>frmRod02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmRodSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmRodSearch02.designer.cs">
+      <DependentUpon>frmRodSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmSectionLizerSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmSectionLizerSearch02.designer.cs">
+      <DependentUpon>frmSectionLizerSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmSectionLizer02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmSectionLizer02.Designer.cs">
+      <DependentUpon>frmSectionLizer02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeprSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeprSearch02.designer.cs">
+      <DependentUpon>frmSelfKeeprSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeper02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeper02.designer.cs">
+      <DependentUpon>frmSelfKeeper02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeperTipSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeperTipSearch02.Designer.cs">
+      <DependentUpon>frmSelfKeeperTipSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeperTip02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmSelfKeeperTip02.Designer.cs">
+      <DependentUpon>frmSelfKeeperTip02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmStreetBoxSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmStreetBoxSearch02.designer.cs">
+      <DependentUpon>frmStreetBoxSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmStreetBox02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmStreetBox02.Designer.cs">
+      <DependentUpon>frmStreetBox02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmTransformerSearch02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmTransformerSearch02.designer.cs">
+      <DependentUpon>frmTransformerSearch02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmTransformer02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmTransformer02.designer.cs">
+      <DependentUpon>frmTransformer02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\frmAirPost02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment\frmAirPost02.Designer.cs">
+      <DependentUpon>frmAirPost02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Base\frmBSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmDesignProfile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDesignProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmEquipStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEquipStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmEquipStatusSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEquipStatusSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmPreparation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPreparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmProductSearch.resx">
+      <DependentUpon>frmProductSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmProjectCode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProjectCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmProjectCodeParent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProjectCodeParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmProjectCodeSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProjectCodeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmHalterComment.resx">
+      <DependentUpon>frmHalterComment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmCrossSectionComment.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCrossSectionComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmOptimalSagTensionMaxF02.resx">
+      <DependentUpon>frmOptimalSagTensionMaxF02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmOptimalSagTensionVTS02.resx">
+      <DependentUpon>frmOptimalSagTensionVTS02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmHalterResult.resx">
+      <DependentUpon>frmHalterResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmHalter.resx">
+      <DependentUpon>frmHalter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmAutoPoleInstallation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAutoPoleInstallation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmCalculationDefault.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCalculationDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmChoiceForce.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChoiceForce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmOptimalSagTensionVTSTest.resx">
+      <DependentUpon>frmOptimalSagTensionVTSTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmRudSurface.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRudSurface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmRudSurfaceGraphic.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRudSurfaceGraphic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmSetDefaultMec.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetDefaultMec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmShortCircuitResult1.resx">
+      <DependentUpon>frmShortCircuitResult1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmShortCircuitResult.resx">
+      <DependentUpon>frmShortCircuitResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmCrossSection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCrossSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmCrossSectionResult.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCrossSectionResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmElecterical.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmElecterical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmElectericalResult.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmElectericalResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmLoad.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmLoadCount.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLoadCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmLoadFactorSearch.resx">
+      <DependentUpon>frmLoadFactorSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmLoadFactor.resx">
+      <DependentUpon>frmLoadFactor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmOptimalSagTensionMaxF.resx">
+      <DependentUpon>frmOptimalSagTensionMaxF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmNetWorkCrossSearch.resx">
+      <DependentUpon>frmNetWorkCrossSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmNetWorkCross.resx">
+      <DependentUpon>frmNetWorkCross.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmShortCircuit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmShortCircuit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmTest.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmTransCapacity.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTransCapacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmTransCapacityResult.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTransCapacityResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditAngle.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditAngle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditConsol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditConsol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawConsol02.resx">
+      <DependentUpon>frmDrawConsol02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDesignSaveServer02.resx">
+      <DependentUpon>frmDesignSaveServer02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDesignSaveAs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDesignSaveAs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDesignSaveServer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDesignSaveServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawDB03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawDB03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawFrame.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawGround02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawGround02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawLight03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawLight03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawTerminal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawTerminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawAirPost02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawAirPost02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawCatout03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawCatout03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawDB03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawDB03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawGround02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawGround02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawLight02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawLight02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawMeasuredJackPanel02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawMeasuredJackPanel02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmFile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawMeasuredJackPanel02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawMeasuredJackPanel02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmInterface.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmArmSearch02.resx">
+      <DependentUpon>frmArmSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmArm02.resx">
+      <DependentUpon>frmArm02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmInsulatorPipeSearch02.resx">
+      <DependentUpon>frmInsulatorPipeSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmInsulatorPipe02.resx">
+      <DependentUpon>frmInsulatorPipe02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPropSearch02.resx">
+      <DependentUpon>frmPropSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmProp02.resx">
+      <DependentUpon>frmProp02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmRampSearch02.resx">
+      <DependentUpon>frmRampSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmJackPanelWeekSearch03.resx">
+      <DependentUpon>frmJackPanelWeekSearch03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmJackPanelWeek03.resx">
+      <DependentUpon>frmJackPanelWeek03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmDB03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDB03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmDBSearch03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDBSearch03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmFloor03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFloor03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmFloorSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFloorSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGround02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGround02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmHalter03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHalter03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmHalterSearch03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHalterSearch03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmLight02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLight02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmLightSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLightSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmMeasuredJackPanel02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMeasuredJackPanel02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmMeasuredJackPanelSearch02.cs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMeasuredJackPanelSearch02.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmOperation02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOperation02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmOperationSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOperationSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawGroundPost03.resx">
+      <DependentUpon>frmDrawGroundPost03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawPoleTip03.resx">
+      <DependentUpon>frmDrawPoleTip03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawGroundCabelTip03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawGroundCabelTip03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawPoleTip02.resx">
+      <DependentUpon>frmEditDrawPoleTip02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawBreaker02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawBreaker02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawBreaker02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawBreaker02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawCatOut02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawCatOut02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawDisconnector02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawDisconnector02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawKablsho02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawKablsho02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEquipLayer02.resx">
+      <DependentUpon>frmEquipLayer02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawKablsho02.resx">
+      <DependentUpon>frmDrawKablsho02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawClamp02.resx">
+      <DependentUpon>frmDrawClamp02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawHeaderCable02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawHeaderCable02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawClamp02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawClamp02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawHeaderCable02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawHeaderCable02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawStreetBox02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawStreetBox02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmGetFromServer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGetFromServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmOpenDesign02.resx">
+      <DependentUpon>frmOpenDesign02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmNewDesign02.resx">
+      <DependentUpon>frmNewDesign02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmSettingServer.resx">
+      <DependentUpon>frmSettingServer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawAirPost02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawAirPost02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawCatOut02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawCatOut02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawDisconnector02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawDisconnector02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawKhazan02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawKhazan02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawPole03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawPole03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawRod02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawRod02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawSelfKeeper02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawSelfKeeper02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawStreetBox02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawStreetBox02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawBranch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawBranch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawGroundCable02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawGroundCable02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawGroundPost02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawGroundPost02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawKhazan02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawKhazan02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawPole02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawPole02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawRod02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawRod02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditSingleBranch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditSingleBranch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmUserAccessibility.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUserAccessibility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundCabelTip02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundCabelTip02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundCabelTipSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundCabelTipSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmInsulatorChain02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInsulatorChain02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmInsulatorChainSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInsulatorChainSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmKablshoSearch02.resx">
+      <DependentUpon>frmKablshoSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmKablsho02.resx">
+      <DependentUpon>frmKablsho02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmClamp02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmClamp02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmClampSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmClampSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmHeaderCabel02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHeaderCabel02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmHeaderCabelSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHeaderCabelSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhuseKey02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPhuseKey02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhuseKeySearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPhuseKeySearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPoleTip02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPoleTip02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPoleTipSearch02.cs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPoleTipSearch02.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmRamp02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRamp02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmAirPostDiagramReport.resx">
+      <DependentUpon>frmAirPostDiagramReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmBranchReport.resx">
+      <DependentUpon>frmBranchReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmChoiceReportElec.resx">
+      <DependentUpon>frmChoiceReportElec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmChoiceReportMec.resx">
+      <DependentUpon>frmChoiceReportMec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmConsolDiagramReport.resx">
+      <DependentUpon>frmConsolDiagramReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmCrossSectionReport.resx">
+      <DependentUpon>frmCrossSectionReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmDiagramReport.resx">
+      <DependentUpon>frmDiagramReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmGISForm1Report.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGISForm1Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmGISSelectReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGISSelectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmGroundPostDiagramReport.resx">
+      <DependentUpon>frmGroundPostDiagramReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmNodeReport.resx">
+      <DependentUpon>frmNodeReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmPoleForceReport.resx">
+      <DependentUpon>frmPoleForceReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmPoleWithHalterReport.resx">
+      <DependentUpon>frmPoleWithHalterReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmPoleWithoutHalterReport.resx">
+      <DependentUpon>frmPoleWithoutHalterReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmRemarkReport.resx">
+      <DependentUpon>frmRemarkReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmRudSurfaceReport.resx">
+      <DependentUpon>frmRudSurfaceReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmSagAndTensionReport.resx">
+      <DependentUpon>frmSagAndTensionReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmSelectReports.resx">
+      <DependentUpon>frmSelectReports.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmStatusReport.resx">
+      <DependentUpon>frmStatusReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmTest.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmTranseInfoReport.resx">
+      <DependentUpon>frmTranseInfoReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmViewReport.resx">
+      <DependentUpon>frmViewReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceImage.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceImage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProduct02.resx">
+      <DependentUpon>ucProduct02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDesignSearch01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDesignSearch01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmChangeCellStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChangeCellStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawGroundCable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawGroundCable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawGroundPost.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawGroundPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawGroundPost01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawGroundPost01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawSelfKeeper.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawSelfKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawPole.resx">
+      <DependentUpon>frmEditDrawPole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawKhazan.resx">
+      <DependentUpon>frmEditDrawKhazan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawBranch01.resx">
+      <DependentUpon>frmEditDrawBranch01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDesignSave.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDesignSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawBranch01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawBranch01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculating\frmOptimalSagTensionVTS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOptimalSagTensionVTS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmUser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmUserSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUserSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmWeather.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frm20kvJackPanel02.resx">
+      <DependentUpon>frm20kvJackPanel02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frm20kvJackPanelSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm20kvJackPanelSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frm20KvProductSelect02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm20KvProductSelect02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmConsolSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConsolSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCountor02.resx">
+      <DependentUpon>frmCountor02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCountorSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCountorSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCT02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCT02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCTSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCTSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmDisconnector02.resx">
+      <DependentUpon>frmDisconnector02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmDisconnectorSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDisconnectorSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundCabel02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundCabel02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundCabelSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundCabelSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundPost02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundPost02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmGroundPostSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGroundPostSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmInsulator02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInsulator02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmInsulatorSearch02.resx">
+      <DependentUpon>frmInsulatorSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmKhazan02.resx">
+      <DependentUpon>frmKhazan02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmKhazanSearch02.resx">
+      <DependentUpon>frmKhazanSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmConductorTipSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConductorTipSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmConsol02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConsol02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmKhazanTip02.resx">
+      <DependentUpon>frmKhazanTip02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmKhazanTipSearch02.resx">
+      <DependentUpon>frmKhazanTipSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmConductorTip02.resx">
+      <DependentUpon>frmConductorTip02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmMafsal02.resx">
+      <DependentUpon>frmMafsal02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmMafsalSearch02.resx">
+      <DependentUpon>frmMafsalSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmMiniatorKey02.resx">
+      <DependentUpon>frmMiniatorKey02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmMiniatorKeySearch02.resx">
+      <DependentUpon>frmMiniatorKeySearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhotoCell02.resx">
+      <DependentUpon>frmPhotoCell02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhotoCellSearch02.resx">
+      <DependentUpon>frmPhotoCellSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhuse02.resx">
+      <DependentUpon>frmPhuse02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhuseSearch02.resx">
+      <DependentUpon>frmPhuseSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhusePole02.resx">
+      <DependentUpon>frmPhusePole02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPhusePoleSearch02.resx">
+      <DependentUpon>frmPhusePoleSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmBreaker02.resx">
+      <DependentUpon>frmBreaker02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmBreakerSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBreakerSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmBus02.resx">
+      <DependentUpon>frmBus02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmBusSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBusSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCabel02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCabel02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCabelSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCabelSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCatOut02.resx">
+      <DependentUpon>frmCatOut02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCatOutSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCatOutSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCell02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCell02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmCellSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCellSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmConductor02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConductor02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmConductorSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConductorSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPole02.resx">
+      <DependentUpon>frmPole02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPoleSearch02.resx">
+      <DependentUpon>frmPoleSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPT02.resx">
+      <DependentUpon>frmPT02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmPTSearch02.resx">
+      <DependentUpon>frmPTSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmAutoKey3p02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAutoKey3p02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmAutoKeySearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAutoKeySearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmReCloser02.resx">
+      <DependentUpon>frmReCloser02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmRecloserSearch02.resx">
+      <DependentUpon>frmRecloserSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmAirPostSearch02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAirPostSearch02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmRod02.resx">
+      <DependentUpon>frmRod02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmRodSearch02.resx">
+      <DependentUpon>frmRodSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmSectionLizerSearch02.resx">
+      <DependentUpon>frmSectionLizerSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmSectionLizer02.resx">
+      <DependentUpon>frmSectionLizer02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmSelfKeeprSearch02.resx">
+      <DependentUpon>frmSelfKeeprSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmSelfKeeper02.resx">
+      <DependentUpon>frmSelfKeeper02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmSelfKeeperTipSearch02.resx">
+      <DependentUpon>frmSelfKeeperTipSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmSelfKeeperTip02.resx">
+      <DependentUpon>frmSelfKeeperTip02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmStreetBoxSearch02.resx">
+      <DependentUpon>frmStreetBoxSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmStreetBox02.resx">
+      <DependentUpon>frmStreetBox02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmTransformerSearch02.resx">
+      <DependentUpon>frmTransformerSearch02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmTransformer02.resx">
+      <DependentUpon>frmTransformer02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\frmAirPost02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAirPost02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atend.Base\Atend.Base.csproj">
+      <Project>{AB3BCF87-7222-4951-851F-7ABB831BA8C5}</Project>
+      <Name>Atend.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atend.Control\Atend.Control.csproj">
+      <Project>{83C9DE81-69D6-4F75-8801-ABE6CF1EFC09}</Project>
+      <Name>Atend.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atend.Global\Atend.Global.csproj">
+      <Project>{49DB262E-74C7-4FB7-9CD8-BE4BE10ACD7B}</Project>
+      <Name>Atend.Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atend.Report\Atend.Report.csproj">
+      <Project>{C24D787B-7454-4A10-82C2-9369D8BD721C}</Project>
+      <Name>Atend.Report</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atend.UControls\Atend.UControls.csproj">
+      <Project>{82E97886-9DCD-42ED-B820-91426F542AEA}</Project>
+      <Name>Atend.UControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EquipmentName.xml" />
+    <Content Include="EquipmentNameServer.xml" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\Dwg.ico" />
+    <Content Include="Images\EntSel.bmp" />
+    <Content Include="Images\Help.gif" />
+    <Content Include="Images\Layout.ico" />
+    <Content Include="Images\MyImage.gif" />
+    <Content Include="Images\new.gif" />
+    <Content Include="Images\open.gif" />
+    <None Include="Resources\filenew-16.png" />
+    <None Include="Resources\editdelete.png" />
+    <None Include="Resources\btnSearch.Image.png" />
+    <None Include="Resources\add_16.png" />
+    <None Include="Resources\16-button_ok.png" />
+    <None Include="Resources\16button_cancel.png" />
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EquipNames>
+	<EquipName>
+		<add Name="Arm" Code="15" Value="بازو و سرشاخه" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Rod" Code="4" Value="برقگیر" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Pole" Code="21" Value="پایه" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="PhusePole" Code="36" Value="پایه فیوز" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="GroundPost" Code="94" Value="پست زمینی" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="AirPost" Code="93" Value="پست هوایی" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Ramp" Code="39" Value="پیچ و مهره" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="MeasuredJackPanel" Code="16" Value="تابلو اندازه گیری" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="WeekJackPanel" Code="18" Value="تابلو فشار ضعیف" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="MiddleJackPanel" Code="27" Value="تابلو فشار متوسط" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Transformer" Code="17" Value="ترانسفورماتور" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Prop" Code="37" Value="تسمه حائل" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="DB" Code="25" Value="جعبه انشعاب" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Khazan" Code="31" Value="خازن" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Breaker" Code="7" Value="دژنکتور" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Light" Code="20" Value="روشنایی" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="ReCloser" Code="28" Value="ریکلوزر" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="HeaderCabel" Code="13" Value="سرکابل" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Disconnector" Code="6" Value="سکسیونر" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="SectionLizer" Code="44" Value="سکشن لایزر" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Floor" Code="38" Value="سکو" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Cell" Code="71" Value="سلول" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Ground" Code="40" Value="سیستم زمین" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Conductor" Code="19" Value="سیم" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="StreetBox" Code="24" Value="شالتر" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Bus" Code="12" Value="شین" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="PhotoCell" Code="10" Value="فتوسل" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Phuse" Code="3" Value="فیوز" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="SelfKeeper" Code="45" Value="کابل خودنگهدار" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="GroundCabel" Code="23" Value="کابل زمینی" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="KablSho" Code="33" Value="کابلشو" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="CatOut" Code="2" Value="کت اوت" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Kalamp" Code="34" Value="کلمپ" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="AuoKey3p" Code="5" Value="کلید اتوماتیک" Table="Self"></add>
+	</EquipName>	
+	<EquipName>
+		<add Name="PhuseKey" Code="29" Value="کلید فیوز" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="MiniatureKey" Code="30" Value="کلید مینیاتور" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Countor" Code="11" Value="کنتور" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Consol" Code="35" Value="کنسول" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Mafsal" Code="32" Value="مفصل" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Insulator" Code="22" Value="مقره" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="InsulatorPipe" Code="42" Value="میل مقره" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="InsulatorChain" Code="41" Value="زنجیر مقره" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="Halter" Code="43" Value="مهار" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="CT" Code="8" Value="CT" Table="Self"></add>
+	</EquipName>
+	<EquipName>
+		<add Name="PT" Code="9" Value="PT" Table="Self"></add>
+	</EquipName>
+
+</EquipNames>

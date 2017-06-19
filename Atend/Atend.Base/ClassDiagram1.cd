@@ -1,0 +1,1125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Atend.Base.Acad.AcadGlobal">
+    <Position X="25" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>Acad\AcadGlobal.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Atend.Base.Acad.AcadGlobal.PolygonPoleData">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.StreetBoxData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.GroundPostData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.DisConnectorData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.KablshoData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.FrameData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.MafsalData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.MiddleJackPanelData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.GroundCableData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.SecsionerCellData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.LightData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.KhazanData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.ClampData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.CirclePoleData">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.GroundData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.HeaderCableData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.RodData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.BreakerData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.SelfKeeperData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.ConductorData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.DezhangtorCellData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.ConsolData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.CatOutData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.PoleData">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.MeasuredJackPanelData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.SecsionerBusCouplerCellData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.TerminalData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.DezhabgtorBusCouplerCellData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.AirPostData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Atend.Base.Acad.AcadGlobal.DBData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Acad\AcadGlobal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="Atend.Base.Acad.AT_COUNTER" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Acad\AT_COUNTER.cs</FileName>
+      <HashCode>AAIQAAAAAAgAAAABEAAAAAEAAAAAAAAAAAAAIQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Acad.AT_INFO" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Acad\AT_INFO.cs</FileName>
+      <HashCode>IAAgAGAAAgAAAAAAAAAAAAAAAgAAAAAEAEAFBCBAIQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Acad.AT_SUB" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Acad\AT_SUB.cs</FileName>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAEAAAEBAAAAAAAFACAAARA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BDesignPlan" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BDesignPlan.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BDesignPlanWorkOrder" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BDesignPlanWorkOrder.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BEquipStatus" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BEquipStatus.cs</FileName>
+      <HashCode>AJASAQCAEAEBCABAABAgAAVAMAAEAAQAAAAAEAAgAhA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BPlan" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BPlan.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BProduct" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BProduct.cs</FileName>
+      <HashCode>IAQBAECAAaAjiAAAIIBhEgzAYEUVoAQAASAAACAgAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BProjectCode" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BProjectCode.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BRegion" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BRegion.cs</FileName>
+      <HashCode>IAQAAGAAAAAAAAIACBAgEAYAIFBEgAAAQAAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BReport" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BReport.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BSetting" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BSetting.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAABAgAAQAIAAEACAAAAAgACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BStatusWorkOrder" Collapsed="true">
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BStatusWorkOrder.cs</FileName>
+      <HashCode>QAAAAAAAAAABCgCAABAggABAIAAAAAQEAAAABAAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BUnit" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BUnit.cs</FileName>
+      <HashCode>IAQAAGAAACQAAAAAAAMhEAQQIEBEhAAAQAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.BWorkOrder" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\BWorkOrder.cs</FileName>
+      <HashCode>AISCAEAAAiAAgAAAADAgAAUQIgEEAAAAAAAAAgAgAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.XXBDepartment" Collapsed="true">
+    <Position X="7.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\XXBDepartment.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.XXBOperationType" Collapsed="true">
+    <Position X="9.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\XXBOperationType.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.XXBSqlServer" Collapsed="true">
+    <Position X="11" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\XXBSqlServer.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Base.XXBTariffHeader" Collapsed="true">
+    <Position X="12.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Base\XXBTariffHeader.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CConductorDay" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CConductorDay.cs</FileName>
+      <HashCode>AgAAAAIAAAQAAAAAAAAgAQgQKEEIEAgAAEBCAABQAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CCrossSection" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CCrossSection.cs</FileName>
+      <HashCode>ggAAAIIAAAQAgACAAACAgAgQgIAIAEAAAABAAgAAQAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CDefaultMec" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CDefaultMec.cs</FileName>
+      <HashCode>AQAAAAAAQAQAAEAAAQAgACAAKAkgBggIAAICAAAQAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CDefaultRudSurface" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CDefaultRudSurface.cs</FileName>
+      <HashCode>AQAACAAAAAQAAAAAAQAgAAAQKEAABAgAAAAAAAAQAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CDistributedLoadBranch" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CDistributedLoadBranch.cs</FileName>
+      <HashCode>AhIgAAISIAQAggAAAAIAAAgQAAAIAmAAAAJgQAAAQEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CDistributedLoadNode" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CDistributedLoadNode.cs</FileName>
+      <HashCode>QAggAUAAIAQCgCAAEgAAABAQAAAAAAAAAACAAAAIoAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CDloadFactor" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CDloadFactor.cs</FileName>
+      <HashCode>AAAFAAAAAQQAgAAEiAAgAIwQIAAFBACAAAAAACAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CHalter" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CHalter.cs</FileName>
+      <HashCode>AAEAAAEAQAQBAAAAQAEgAEAQaUEAAAwRAQEEEAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CKE" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CKE.cs</FileName>
+      <HashCode>AAAAAEAAAABAgAABAAAgAQIAoAACAAAAAAAACAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CLoadFactor" Collapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CLoadFactor.cs</FileName>
+      <HashCode>AAAAAAAEBRQAgAUAAAAgABYUIAAHBAAAAGBBACBgQQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CMaxTension" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CMaxTension.cs</FileName>
+      <HashCode>QAAQAAAAgAQCAACAAiAwAAAAsAAAABiIAAACCEAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CNetWorkCross" Collapsed="true">
+    <Position X="23.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CNetWorkcross.cs</FileName>
+      <HashCode>AAAAAAAAAoQAgACAAAAgaAQQImgFBACAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CPackageLoad" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CPackageLoad.cs</FileName>
+      <HashCode>AAAAAAAAAAQBAAAABAAgAAQQIAABBAAAAAQEAiAABAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CPower" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CPower.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAAAAAgAAAQIAEAAAABAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CPowerWithHalter" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CPowerWithHalter.cs</FileName>
+      <HashCode>BAAEAAQAAAQAACAAAAEgAECReQBAgEgBAAAGAQAABgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CPowerWithOutHalter" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CPowerWithOutHalter.cs</FileName>
+      <HashCode>BAAEAAQAAAQAACAAAAAgAECQOQBAgAgBAAACAQAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CRudSurface" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CRudSurface.cs</FileName>
+      <HashCode>AAEAAAEAQAQBACAAQAEgAEAQaEEAAAwRAABEEAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CSagAndTension" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CSagAndTension.cs</FileName>
+      <HashCode>BAQAAAAAgAQCAIAAAgAgAAAQKEEAIAtBAGBDQwRUAgI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CSetDefaultElec" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CSetDefaultElec.cs</FileName>
+      <HashCode>AAAAAAAAEAQAABAAAAAgAAAAIAAABAAEAABABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CSetDefaultMec" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CSetDefaultMecc.cs</FileName>
+      <HashCode>AQIAAAACACQAAAAgAQAgAAAAIEgABgBIAAJAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CShortCircuit" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CShortCircuit.cs</FileName>
+      <HashCode>AhIgAAoSIAQAggAAAAMAAAgRAAAIAmAAAAJgQgAAAGI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CStartEnd" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CStartEnd.cs</FileName>
+      <HashCode>AAEAAAABgAQAAIAAAAAgAAAQKAAAAAgAAAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CTemp" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CTemp.cs</FileName>
+      <HashCode>AAAAAAAEAAQABAAAAAQgAIAQIACAAACAAAAAgAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CTransBranch" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CTransBranch.cs</FileName>
+      <HashCode>AAAmAAAAIgQAgCAAEAAgABAQAAAAAAAAIAAAACAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CTransCurrent" Collapsed="true">
+    <Position X="21.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CTransCurrent.cs</FileName>
+      <HashCode>AAACAAAAAgQAgCAAEAAgABAQAAAAAAAAIAAAACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CTransformer" Collapsed="true">
+    <Position X="23.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CTransformer.cs</FileName>
+      <HashCode>AAAAgAAABIQAgAQABAAAAAQQAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CTransPower" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CTransPower.cs</FileName>
+      <HashCode>AAACAAAAAgQAgCAAEAAgABAQAAAAAAAAAEAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.CWindOnPole" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\CWindOnPole.cs</FileName>
+      <HashCode>AAECAAEAQgQBAAAAQAEgAEAQaUEAAAwRAQEEEAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Calculating.Test" Collapsed="true">
+    <Position X="5.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Calculating\Test.cs</FileName>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DAccess" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DAccess.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAAAgAAQAIAAEAAAAYAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DBranch" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DBranch.cs</FileName>
+      <HashCode>ABAgBQAWAgQCxAAIAkAgCAAyIAEBJkAAAAhAACAIIAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DCellStatus" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DCellStatus.cs</FileName>
+      <HashCode>AAAAQABAAAQAABAAAAAgAAACYAAABFBAAAAQACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DConsol" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DConsol.cs</FileName>
+      <HashCode>CAAgAAAAAgQAgAAgAAAgAAAQIgABAAQAAAAACCAAIAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DDesign" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DDesign.cs</FileName>
+      <HashCode>IAaCYEAAwCgACEgQCBggAAgAYEMggEACIAgAUiAgAgI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DDesignFile" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DDesignFile.cs</FileName>
+      <HashCode>AAQCAEAAAAAAAAFAAAAAQAAAEAFEABEABAAAAAACAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DDesignProfile" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DDesignProfile.cs</FileName>
+      <HashCode>IAYGAsAEAQSABAGCABYAAkAWEAIABBGCAABEQCAgBkA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DGlobal" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DGlobal.cs</FileName>
+      <HashCode>oIAAACCAAAAAgAIEAAASAEAQEABAAAAAAAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DNode" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DNode.cs</FileName>
+      <HashCode>AAAgAAAABAQAwAQAAEAgAAAQIAABBAAAAAAAAAAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DNumberingSystem" Collapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DNumberingSystem.cs</FileName>
+      <HashCode>AAAAAAEEAEQAgAAACCAgABAUIAAVAAgABAAAACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DPackage" Collapsed="true">
+    <Position X="21.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DPackage.cs</FileName>
+      <HashCode>SAAgEEAEAgQBxAAAJkCgAAQwIwABJgQEEQAADCAAIAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DPoleInfo" Collapsed="true">
+    <Position X="23.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DPoleInfo.cs</FileName>
+      <HashCode>AAAAAABAAAAAQAAIAgAgAAEQYAABBEAEAAAABiAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DPoleSection" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DPoleSection.cs</FileName>
+      <HashCode>ABAoAAAQCAAAgAAGAAAgAAAQKAAAAAgAAEAAQABQIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DPost" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DPost.cs</FileName>
+      <HashCode>AAAgAAAAAAQAwAAAAEAgAAAQIAABBAAAAAAAACAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DPrintSize" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DPrintSize.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DProductProperties" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DProductProperties.cs</FileName>
+      <HashCode>IAAAACgIAAAICAAAAAIoAAACIAAABEgAgAgEAIAIBAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DProductSubEquip" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DProductSubEquip.cs</FileName>
+      <HashCode>AAAAAAAAAAAAACCAAAAAAAAAAAAAACAAAAEAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DRemark" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DRemark.cs</FileName>
+      <HashCode>AAQAAEAAACQAAAAAABAgAAQQIAEFBAAABAAAAAAgAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DSection" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DSection.cs</FileName>
+      <HashCode>AAAAAAAAAAQAwAAAAEAgAAgYIAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DSettingValue" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DSettingValue.cs</FileName>
+      <HashCode>AAAAAAAEAAQAAAAAAAAAAAAEAAQBBAAAIQAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DStatusReport" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DStatusReport.cs</FileName>
+      <HashCode>AAICAEAgASAAAAEABAAgAEQAIAAAoAEAAIAAAAAAIgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DUser" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DUser.cs</FileName>
+      <HashCode>AAAEiABAAGBAAIAAABAgCAQAIAEEAAAKAQAAAkEABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DUserAccess" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DUserAccess.cs</FileName>
+      <HashCode>AAAAAEAAAAABAAIAAAAiAABAKAEAAAgAAAAkAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DWeather" Collapsed="true">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DWeather.cs</FileName>
+      <HashCode>EAAgAAAAJAQAgAQAAIEgAAABIAgQBASAAAQAgAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DWeatherConditionType" Collapsed="true">
+    <Position X="21.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DWeatherConditionType.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAAAAAAgAAQAIAAFAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DWeatherType" Collapsed="true">
+    <Position X="23.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DWeatherType.cs</FileName>
+      <HashCode>AAAAAAAUAAAAkAAEAAAgAAQEIAAFABAAAAAEAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.DWorkOrder" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\DWorkOrder.cs</FileName>
+      <HashCode>AAQAAEAAAAAAgAEACIAAAAgAAAEAAAAAAAAAACAAAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.NodeTransaction" Collapsed="true">
+    <Position X="4" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\NodeTransaction.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.XXCoductorTransaction" Collapsed="true">
+    <Position X="14.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\XXCoductorTransaction.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.XXDDesignSetting" Collapsed="true">
+    <Position X="16.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\XXDDesignSetting.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.XXDEquipLayer" Collapsed="true">
+    <Position X="18" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\XXDEquipLayer.cs</FileName>
+      <HashCode>AAIAIAAEAAQAAAhQAAIoAAAeIAACAAAAAgAAQCAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.XXDLayer" Collapsed="true">
+    <Position X="19.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\XXDLayer.cs</FileName>
+      <HashCode>AgIAAQAEAAQAgAAAAAAgAAQUIAAFBAAAAAAAACIAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Design.JumperTransaction" Collapsed="true">
+    <Position X="2.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Design\XXJumperTransaction.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EAirPost" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EAirPost.cs</FileName>
+      <HashCode>ACagAU0kAiUBiCKAAJIgrI1CMAOFQRSAIgAAIgggMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EArm" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EArm.cs</FileName>
+      <HashCode>AAKgAQAgAAUBiAIAAAAgAAVAIAIFQQQAAAAAAgAAMAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EAutoKey_3p" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EAutoKey_3p.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIACJIgLA1AIAMFQQSAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EBreaker" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EBreaker.cs</FileName>
+      <HashCode>AAagCUwkAiUBiiKACJIgrA1AIAOFQQSAIwAAIgggMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EBus" Collapsed="true">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EBus.cs</FileName>
+      <HashCode>AAagAUwkAiUBiiIAgJIgLI1AIAMFQQSAIwAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ECatOut" Collapsed="true">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ECatOut.cs</FileName>
+      <HashCode>ACagCUwkAiUBiiIACJIgrC1AIAOlQQSAIwAAIgggMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ECell" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ECell.cs</FileName>
+      <HashCode>ACKAAUwAAiUBiCIAAJIgLA1AIAOFQQQAIQAAIgggEAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EClamp" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EClamp.cs</FileName>
+      <HashCode>AAagQUwkAiVFiiIAQJIgLA1AIEcFQQSAIwAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EConductor" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EConductor.cs</FileName>
+      <HashCode>IC6BAU4kByWDi2YAgtYiLA1oICcFYRSoIgARKiCoOQk=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EConductorTip" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EConductorTip.cs</FileName>
+      <HashCode>AiaEQccEACUpiqYEIBEkDgVAIAMFQQQCBAAEAgAglEg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EConsol" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EConsol.cs</FileName>
+      <HashCode>ACahQUwkAjUBiiIABNIhLA1IMEeFVRSFIwEAMwggMQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EContainerPackage" Collapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EContainerPackage.cs</FileName>
+      <HashCode>BBAAAUAAACUBgACAAAAggADAIAUJASSAAQAAAAAKgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ECountor" Collapsed="true">
+    <Position X="21.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ECountor.cs</FileName>
+      <HashCode>AAakAUwkAiUBiiIACJIgLA1AIAMFQQSAIgAAIgAgNAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ECT" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ECT.cs</FileName>
+      <HashCode>AEagAUwkAiUByiIEAJIgLA1AIAMFQQSAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EDB" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EDB.cs</FileName>
+      <HashCode>AAYgAUwkAiUBmCIAAJIgLE1AKANFQQyAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EDBPhuse" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EDBPhuse.cs</FileName>
+      <HashCode>AAaQIUCEgAcJgKACAJByIAlAoAsBQQQoAEAAAgAAAAU=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EDisconnector" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EDisconnector.cs</FileName>
+      <HashCode>ACagAUwkAiUBiiIACJIgLA1AIAOFQQSAIwAAIgggMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EFloor" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EFloor.cs</FileName>
+      <HashCode>AAaAAUwEAiUBiAIAAJIgKA1AIAMFQQQAIAAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EGround" Collapsed="true">
+    <Position X="18" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EGround.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIAAJIgLA1AIAMFQQSAIgAAIgAgIAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EGroundCabel" Collapsed="true">
+    <Position X="21.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EGroundCabel.cs</FileName>
+      <HashCode>AC6gAU4kAyULigKAAJIirC1gIAMtIQSQIwAAKgEoMQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EGroundCabelTip" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EGroundCabelTip.cs</FileName>
+      <HashCode>AiaEQcYEACUhiiYEIBAgDAVAIAMFQQQCBAAAAgAgFEg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EGroundPost" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EGroundPost.cs</FileName>
+      <HashCode>QSagAU0kAiUBiCIEAJIgLE1CMAOFQRaAIwACIkggMAw=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EHalter" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EHalter.cs</FileName>
+      <HashCode>AAKgAUwgAiUBiAIAAJIgKA1AIAMFQQQBIABgIgAgcAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EHeaderCabel" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EHeaderCabel.cs</FileName>
+      <HashCode>AEagAUwkAiUBiiKAgJIgrI1AIAMFQQSAIwAAKgBgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EInsulator" Collapsed="true">
+    <Position X="14.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EInsulator.cs</FileName>
+      <HashCode>AAagAUwkAiWBiiIAgJIgrA1AIAOFQQSAIwAAIgggMAo=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EInsulatorChain" Collapsed="true">
+    <Position X="18" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EInsulatorChain.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIAAJIgLA1AIAMFQUSAIABAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EInsulatorPipe" Collapsed="true">
+    <Position X="21.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EInsulatorPipe.cs</FileName>
+      <HashCode>AAKgAUQgACUBiCIAABAgCAVAIAMFQSSAAAAAAgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EJAckPanel" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EJAckPanel.cs</FileName>
+      <HashCode>QSagAU0kIiUBqAIAAJIgrQ1AIAcHQawAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EJackPanelWeek" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EJackPanelWeek.cs</FileName>
+      <HashCode>QAagAUwkgCURiiIEAZAgLQ9AIAMXQQaAAhACIgQqMAw=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EJackPanelWeekCell" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EJackPanelWeekCell.cs</FileName>
+      <HashCode>IIIAAWYAACUByAIAAABwCANQIAMCQQQAAAAQEgAAEAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EKablsho" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EKablsho.cs</FileName>
+      <HashCode>AEagAUwkAiUBiiIAAJIgLA1AIAMFQASAIwAAIgBgMAk=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EKhazan" Collapsed="true">
+    <Position X="14.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EKhazan.cs</FileName>
+      <HashCode>ACagAUwkAiUBigKAKJIgrC1CIAMlQQSAIgAAKgAhMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EKhazanTip" Collapsed="true">
+    <Position X="18" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EKhazanTip.cs</FileName>
+      <HashCode>ACKAAUwAACUhiCIAIBIgDA1AIAOFQQQAAAAAAgghEAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ELight" Collapsed="true">
+    <Position X="21.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ELight.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIAAJIgLA1AIAMFQQSAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EMafsal" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EMafsal.cs</FileName>
+      <HashCode>ACagAUwkAiUBiiIAgJIgLI1AIAMFQQSAIwAAKgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EMeasuredJackPanel" Collapsed="true">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EMeasuredJackPanel.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIABJIgLA1AIAMFQASAIgAAIgAgMAk=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EMiniatorKey" Collapsed="true">
+    <Position X="7.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EMiniatorKey.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIACJIgLA1AIAMFQQSAIgCAIgAgsAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EOperation" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EOperation.cs</FileName>
+      <HashCode>EAAgEVAgACQBSAIBBBAgAAVAIAEhBQAAAQAAAAAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPhotoCell" Collapsed="true">
+    <Position X="14.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPhotoCell.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIAAJIgLA1AIAMFQQSAIwAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPhuse" Collapsed="true">
+    <Position X="18" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPhuse.cs</FileName>
+      <HashCode>AA6gAU4kAiUBiiIASJIgLA1AIAMFQQSAIwAAIgIoMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPhuseKey" Collapsed="true">
+    <Position X="21.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPhuseKey.cs</FileName>
+      <HashCode>AAagAUwkAiUBiCIACJIgLA1AIAMFQQSAIgCAIgAgsAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPhusePole" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPhusePole.cs</FileName>
+      <HashCode>AAagAUwkAiUBiiIACJIgLA1AIAMFQQSAIgCAIgAgsAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPole" Collapsed="true">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPole.cs</FileName>
+      <HashCode>ACalAUwkBiUBiiYAAJIgLM3EIAPFRSSRIwAAIgggNQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPoleTip" Collapsed="true">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPoleTip.cs</FileName>
+      <HashCode>ACaAAUxEAgUByyIEAJIgLI1ycAOFYFUQICABIghgEAk=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EProductPackage" Collapsed="true">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EProductPackage.cs</FileName>
+      <HashCode>AAAmAUAABCVBgCAABBAgAAVAIAMoEQUCEAAAAAIAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EProp" Collapsed="true">
+    <Position X="14.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EProp.cs</FileName>
+      <HashCode>AAKgAUAgACUBiAIAAAAgAAVAIAIFQQQAAAAAAgAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EPT" Collapsed="true">
+    <Position X="18" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EPT.cs</FileName>
+      <HashCode>AAagAUwkAi0BiiIAAJIgLo1AIAMFQQSAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ERamp" Collapsed="true">
+    <Position X="21.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ERamp.cs</FileName>
+      <HashCode>AAKgAUAgACUBiAIAAAAgAAVAIAIFQQQAAAAAAgAAMAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EReCloser" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EReCloser.cs</FileName>
+      <HashCode>AAagAUwkAiUBiiIACJIgLA1AIAMFQQSAIwAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ERod" Collapsed="true">
+    <Position X="4" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ERod.cs</FileName>
+      <HashCode>ACagAUwkAiUBiiKACJIgrC1AIAMlQQSAIwAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ESectionLizer" Collapsed="true">
+    <Position X="7.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ESectionLizer.cs</FileName>
+      <HashCode>AAagAUwkAiUBiiIACJIgLA1AIAMFQQSAIgAAIgAgMAo=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ESelfKeeper" Collapsed="true">
+    <Position X="11" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ESelfKeeper.cs</FileName>
+      <HashCode>AD6BAU4UC6UDimKAANYiLA1gICcFY1QoIAIQKgAoOQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ESelfKeeperTip" Collapsed="true">
+    <Position X="14.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ESelfKeeperTip.cs</FileName>
+      <HashCode>AgaEQUcEACWhiqKAIBIgjgVgJAMFYQQABAAAAgAglEg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EStreetBox" Collapsed="true">
+    <Position X="18" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EStreetBox.cs</FileName>
+      <HashCode>AAYgAUwkAiUBmCIAAJIgLE1AKANFQQyAIgAAIgAgMAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.EStreetBoxPhuse" Collapsed="true">
+    <Position X="21.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\EStreetBoxPhuse.cs</FileName>
+      <HashCode>AAaQKUEEgAcFgKICABByKAFAsAsFQQQIAEBACgAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Atend.Base.Equipment.ETransformer" Collapsed="true">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Equipment\ETransformer.cs</FileName>
+      <HashCode>AAagAUwkBiUBiiYAAJIgLA1AIAMFQQSAIgAAogAgMAo=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

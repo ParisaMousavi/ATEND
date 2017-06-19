@@ -1,0 +1,990 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Data.OleDb;
+
+using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.GraphicsInterface;
+using Autodesk.AutoCAD.DatabaseServices;
+using Autodesk.AutoCAD.Runtime;
+using Autodesk.AutoCAD.Geometry;
+//using Autodesk.AutoCAD.Interop;
+using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.Windows;
+using Autodesk.AutoCAD.Colors;
+
+namespace Atend.Global.Acad.DrawEquips
+{
+    public class AcDrawMeasuredJackPanel
+    {
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~ properties ~~~~~~~~~~~~~~~~~~~~~~~~~~//
+        int projectCode;
+        public int ProjectCode
+        {
+            get { return projectCode; }
+            set { projectCode = value; }
+        }
+
+        int existance;
+        public int Existance
+        {
+            get { return existance; }
+            set { existance = value; }
+        }
+
+        bool useAccess;
+        public bool UseAccess
+        {
+            get { return useAccess; }
+            set { useAccess = value; }
+        }
+
+        Atend.Base.Equipment.EMeasuredJackPanel _eMeasuredJackPanel;
+        public Atend.Base.Equipment.EMeasuredJackPanel eMeasuredJackPanel
+        {
+            get { return _eMeasuredJackPanel; }
+            set { _eMeasuredJackPanel = value; }
+        }
+
+        Atend.Base.Design.DPackage MeasuredPack = new Atend.Base.Design.DPackage();
+
+        private ObjectId selectedObjectId;
+        public ObjectId SelectedObjectId
+        {
+            get { return selectedObjectId; }
+            set { selectedObjectId = value; }
+        }
+
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~ Class ~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+        class DrawMeasuredJackPanelJig : DrawJig
+        {
+
+            private List<Entity> Entities = new List<Entity>();
+            public Point2d BasePoint = Point2d.Origin;
+            private double NewAngle, BaseAngle = 0;
+            public bool GetPoint = true;
+            public bool GetAngle = false;
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            private TextStyle _style;
+            double MyScale = 1;
+
+            public DrawMeasuredJackPanelJig(double Scale)
+            {
+                MyScale = Scale;
+
+                // SET TEXT STYLE
+
+                _style = new TextStyle();
+
+                _style.Font = new FontDescriptor("Calibri", false, true, 0, 0);
+
+                _style.TextSize = 10;
+
+                // END OF SET TEXT STYLE
+
+                //AddRegAppTableRecord(RegAppName);
+
+
+                //Add Consol
+
+
+
+            }
+
+            private Entity CreateMeasuredJackpanelEntity(Point2d BasePoint)
+            {
+
+                double BaseX = BasePoint.X;
+                double BaseY = BasePoint.Y;
+
+                Atend.Global.Acad.AcadJigs.MyPolyLine pLine = new Atend.Global.Acad.AcadJigs.MyPolyLine();
+
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - 6, BaseY + 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX + 6, BaseY + 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX + 6, BaseY - 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - 6, BaseY - 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - 6, BaseY + 5), 0, 0, 0);
+                pLine.Closed = true;
+
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(pLine, (int)Atend.Control.Enum.ProductType.Kalamp);
+
+                return pLine;
+
+            }
+
+            private Entity CreateLine(Point3d StartPoint, Point3d EndPoint, int ProductType, int ColorIndex, double Thickness)
+            {
+                Atend.Global.Acad.AcadJigs.MyLine mLine = new Atend.Global.Acad.AcadJigs.MyLine();
+                mLine.StartPoint = StartPoint;
+                mLine.EndPoint = EndPoint;
+
+                //if (Thickness != 0)
+                //{
+                //    mLine.Thickness = Thickness;
+                //}
+
+
+                //if (ProductType != 0)
+                //{
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(mLine, ProductType);
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(mLine, CodeGuid);
+                //}
+                //if (ColorIndex != 0)
+                //{
+                mLine.ColorIndex = ColorIndex;
+                //}
+
+                return mLine;
+            }
+
+            protected override SamplerStatus Sampler(JigPrompts prompts)
+            {
+                //throw new System.Exception("The method or operation is not implemented.");
+
+
+                if (GetPoint)
+                {
+                    JigPromptPointOptions jppo = new JigPromptPointOptions("Select Measeared jackpanel Position : \n");
+
+                    jppo.UserInputControls = (UserInputControls.Accept3dCoordinates |
+                                             UserInputControls.NullResponseAccepted |
+                                             UserInputControls.NoNegativeResponseAccepted);
+
+                    PromptPointResult ppr = prompts.AcquirePoint(jppo);
+
+                    if (ppr.Status == PromptStatus.OK)
+                    {
+                        Point2d NewPoint = new Point2d(ppr.Value.X, ppr.Value.Y);
+
+                        if (NewPoint.IsEqualTo(BasePoint))
+                        {
+
+                            //v2d = new Vector2d(0, 0);
+
+                            return SamplerStatus.NoChange;
+                        }
+                        else
+                        {
+                            //v2d = BasePoint - NewPoint;
+
+                            BasePoint = new Point2d(ppr.Value.X, ppr.Value.Y);
+
+                            //ed.WriteMessage("POINT OK. \n");
+
+                            return SamplerStatus.OK;
+                        }
+                    }
+                    else
+                    {
+                        //v2d = new Vector2d(0, 0);
+
+                        return SamplerStatus.Cancel;
+                    }
+
+                }
+                else if (GetAngle)
+                {
+                    JigPromptAngleOptions jpao = new JigPromptAngleOptions("Select Measured jackpanel Angle : \n");
+
+                    jpao.UseBasePoint = true;
+
+                    jpao.BasePoint = new Point3d(BasePoint.X, BasePoint.Y, 0);
+
+                    PromptDoubleResult pdr = prompts.AcquireAngle(jpao);
+
+                    if (pdr.Status == PromptStatus.OK)
+                    {
+                        if (pdr.Value == NewAngle)
+                        {
+
+                            return SamplerStatus.NoChange;
+                        }
+                        else
+                        {
+
+                            NewAngle = pdr.Value;// -NewAngle;
+
+                            return SamplerStatus.OK;
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        return SamplerStatus.Cancel;
+
+                    }
+
+                }
+
+                return SamplerStatus.NoChange;
+
+            }
+
+            protected override bool WorldDraw(WorldDraw draw)
+            {
+
+                // SHOW POSITION VALUE
+
+                WorldGeometry2 wg2 = draw.Geometry as WorldGeometry2;
+
+                if (wg2 != null)
+                {
+
+                    // Push our transforms onto the stack
+
+                    wg2.PushOrientationTransform(OrientationBehavior.Screen);
+
+                    wg2.PushPositionTransform(PositionBehavior.Screen, new Point2d(30, 30));
+
+                    // Draw our screen-fixed text
+
+                    wg2.Text(
+
+                        new Point3d(0, 0, 0),  // Position
+
+                        new Vector3d(0, 0, 1), // Normal
+
+                        new Vector3d(1, 0, 0), // Direction
+
+                        BasePoint.ToString() + ":" + NewAngle.ToString() + ":" + BaseAngle.ToString(), // Text
+
+                        true,                  // Rawness
+
+                        _style                // TextStyle
+
+                            );
+
+
+                    // Remember to pop our transforms off the stack
+
+                    wg2.PopModelTransform();
+
+                    wg2.PopModelTransform();
+
+                }
+
+                // END OF SHOW POSITION VALUE
+
+                if (GetPoint)
+                {
+                    Entities.Clear();
+                    Entities.Add(CreateMeasuredJackpanelEntity(BasePoint));
+                    Entities.Add(CreateLine(new Point3d(BasePoint.X + 6, BasePoint.Y + 5, 0), new Point3d(BasePoint.X - 6, BasePoint.Y - 5, 0), 0, 0, 0));
+
+                    //~~~~~~~~ SCALE ~~~~~~~~~~
+
+                    Matrix3d trans1 = Matrix3d.Scaling(MyScale, new Point3d(BasePoint.X, BasePoint.Y, 0));
+                    foreach (Entity en in Entities)
+                    {
+                        en.TransformBy(trans1);
+                    }
+
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~
+                }
+                else if (GetAngle)
+                {
+                    Matrix3d trans = Matrix3d.Rotation(NewAngle - BaseAngle, ed.CurrentUserCoordinateSystem.CoordinateSystem3d.Zaxis,
+
+                                                       new Point3d(BasePoint.X, BasePoint.Y, 0));
+
+
+                    foreach (Entity en in Entities)
+                    {
+
+                        en.TransformBy(trans);
+
+                    }
+
+                    BaseAngle = NewAngle;
+                    //NewAngle = 0;
+
+                }
+
+                //~~~~~~~~ SCALE ~~~~~~~~~~
+
+                //////if (Atend.Control.Common.SelectedDesignScale != 0)
+                //////{
+                //////    double ScaleValue = 1 / Atend.Control.Common.SelectedDesignScale;
+                //////    Matrix3d trans1 = Matrix3d.Scaling(1.50,
+
+                //////                       new Point3d(BasePoint.X, BasePoint.Y, 0));
+
+                //////    foreach (Entity en in Entities)
+                //////    {
+
+                //////        en.TransformBy(trans1);
+
+                //////    }
+                //////}
+
+                //~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+                foreach (Entity en in Entities)
+                {
+
+                    draw.Geometry.Draw(en);
+
+                }
+
+
+                return true;
+            }
+
+            public List<Entity> GetEntities()
+            {
+                return Entities;
+            }
+
+
+        }
+
+        class DrawMeasuredJackPanelJig02 : DrawJig
+        {
+
+            private List<Entity> Entities = new List<Entity>();
+            public Point2d BasePoint = Point2d.Origin;
+            private double NewAngle, BaseAngle = 0;
+            public bool GetPoint = true;
+            public bool GetAngle = false;
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            private TextStyle _style;
+            double MyScale = 1;
+
+            public DrawMeasuredJackPanelJig02(double Scale)
+            {
+                MyScale = Scale;
+
+                // SET TEXT STYLE
+
+                _style = new TextStyle();
+
+                _style.Font = new FontDescriptor("Calibri", false, true, 0, 0);
+
+                _style.TextSize = 10;
+
+                // END OF SET TEXT STYLE
+
+                //AddRegAppTableRecord(RegAppName);
+
+
+                //Add Consol
+
+
+
+            }
+
+            private Entity CreateMeasuredJackpanelEntity(Point2d BasePoint)
+            {
+
+                double BaseX = BasePoint.X;
+                double BaseY = BasePoint.Y;
+
+                Atend.Global.Acad.AcadJigs.MyPolyLine pLine = new Atend.Global.Acad.AcadJigs.MyPolyLine();
+
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - 6, BaseY + 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX + 6, BaseY + 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX + 6, BaseY - 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - 6, BaseY - 5), 0, 0, 0);
+                pLine.AddVertexAt(pLine.NumberOfVertices, new Point2d(BaseX - 6, BaseY + 5), 0, 0, 0);
+                pLine.Closed = true;
+
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(pLine, (int)Atend.Control.Enum.ProductType.Kalamp);
+
+                return pLine;
+
+            }
+
+            private Entity CreateLine(Point3d StartPoint, Point3d EndPoint, int ProductType, int ColorIndex, double Thickness)
+            {
+                Atend.Global.Acad.AcadJigs.MyLine mLine = new Atend.Global.Acad.AcadJigs.MyLine();
+                mLine.StartPoint = StartPoint;
+                mLine.EndPoint = EndPoint;
+
+                //if (Thickness != 0)
+                //{
+                //    mLine.Thickness = Thickness;
+                //}
+
+
+                //if (ProductType != 0)
+                //{
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(mLine, ProductType);
+                //Atend.Global.Acad.AcadJigs.SaveExtensionData(mLine, CodeGuid);
+                //}
+                //if (ColorIndex != 0)
+                //{
+                mLine.ColorIndex = ColorIndex;
+                //}
+
+                return mLine;
+            }
+
+            protected override SamplerStatus Sampler(JigPrompts prompts)
+            {
+                //throw new System.Exception("The method or operation is not implemented.");
+
+
+                if (GetPoint)
+                {
+                    JigPromptPointOptions jppo = new JigPromptPointOptions("Select Measeared jackpanel Position : \n");
+
+                    jppo.UserInputControls = (UserInputControls.Accept3dCoordinates |
+                                             UserInputControls.NullResponseAccepted |
+                                             UserInputControls.NoNegativeResponseAccepted);
+
+                    PromptPointResult ppr = prompts.AcquirePoint(jppo);
+
+                    if (ppr.Status == PromptStatus.OK)
+                    {
+                        Point2d NewPoint = new Point2d(ppr.Value.X, ppr.Value.Y);
+
+                        if (NewPoint.IsEqualTo(BasePoint))
+                        {
+
+                            //v2d = new Vector2d(0, 0);
+
+                            return SamplerStatus.NoChange;
+                        }
+                        else
+                        {
+                            //v2d = BasePoint - NewPoint;
+
+                            BasePoint = new Point2d(ppr.Value.X, ppr.Value.Y);
+
+                            //ed.WriteMessage("POINT OK. \n");
+
+                            return SamplerStatus.OK;
+                        }
+                    }
+                    else
+                    {
+                        //v2d = new Vector2d(0, 0);
+
+                        return SamplerStatus.Cancel;
+                    }
+
+                }
+                else if (GetAngle)
+                {
+                    JigPromptAngleOptions jpao = new JigPromptAngleOptions("Select Measured jackpanel Angle : \n");
+
+                    jpao.UseBasePoint = true;
+
+                    jpao.BasePoint = new Point3d(BasePoint.X, BasePoint.Y, 0);
+
+                    PromptDoubleResult pdr = prompts.AcquireAngle(jpao);
+
+                    if (pdr.Status == PromptStatus.OK)
+                    {
+                        if (pdr.Value == NewAngle)
+                        {
+
+                            return SamplerStatus.NoChange;
+                        }
+                        else
+                        {
+
+                            NewAngle = pdr.Value;// -NewAngle;
+
+                            return SamplerStatus.OK;
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        return SamplerStatus.Cancel;
+
+                    }
+
+                }
+
+                return SamplerStatus.NoChange;
+
+            }
+
+            protected override bool WorldDraw(WorldDraw draw)
+            {
+
+                // SHOW POSITION VALUE
+
+                WorldGeometry2 wg2 = draw.Geometry as WorldGeometry2;
+
+                if (wg2 != null)
+                {
+
+                    // Push our transforms onto the stack
+
+                    wg2.PushOrientationTransform(OrientationBehavior.Screen);
+
+                    wg2.PushPositionTransform(PositionBehavior.Screen, new Point2d(30, 30));
+
+                    // Draw our screen-fixed text
+
+                    wg2.Text(
+
+                        new Point3d(0, 0, 0),  // Position
+
+                        new Vector3d(0, 0, 1), // Normal
+
+                        new Vector3d(1, 0, 0), // Direction
+
+                        BasePoint.ToString() + ":" + NewAngle.ToString() + ":" + BaseAngle.ToString(), // Text
+
+                        true,                  // Rawness
+
+                        _style                // TextStyle
+
+                            );
+
+
+                    // Remember to pop our transforms off the stack
+
+                    wg2.PopModelTransform();
+
+                    wg2.PopModelTransform();
+
+                }
+
+                // END OF SHOW POSITION VALUE
+
+                if (GetPoint)
+                {
+                    Entities.Clear();
+                    Entities.Add(CreateMeasuredJackpanelEntity(BasePoint));
+                    Entities.Add(CreateLine(new Point3d(BasePoint.X + 6, BasePoint.Y + 5, 0), new Point3d(BasePoint.X - 6, BasePoint.Y - 5, 0), 0, 0, 0));
+
+                    //~~~~~~~~ SCALE ~~~~~~~~~~
+
+                    Matrix3d trans1 = Matrix3d.Scaling(MyScale, new Point3d(BasePoint.X, BasePoint.Y, 0));
+                    foreach (Entity en in Entities)
+                    {
+                        en.TransformBy(trans1);
+                    }
+
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~
+                }
+                else if (GetAngle)
+                {
+                    Matrix3d trans = Matrix3d.Rotation(NewAngle - BaseAngle, ed.CurrentUserCoordinateSystem.CoordinateSystem3d.Zaxis,
+
+                                                       new Point3d(BasePoint.X, BasePoint.Y, 0));
+
+
+                    foreach (Entity en in Entities)
+                    {
+
+                        en.TransformBy(trans);
+
+                    }
+
+                    BaseAngle = NewAngle;
+                    //NewAngle = 0;
+
+                }
+
+                //~~~~~~~~ SCALE ~~~~~~~~~~
+
+                //////if (Atend.Control.Common.SelectedDesignScale != 0)
+                //////{
+                //////    double ScaleValue = 1 / Atend.Control.Common.SelectedDesignScale;
+                //////    Matrix3d trans1 = Matrix3d.Scaling(1.50,
+
+                //////                       new Point3d(BasePoint.X, BasePoint.Y, 0));
+
+                //////    foreach (Entity en in Entities)
+                //////    {
+
+                //////        en.TransformBy(trans1);
+
+                //////    }
+                //////}
+
+                //~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+                foreach (Entity en in Entities)
+                {
+
+                    draw.Geometry.Draw(en);
+
+                }
+
+
+                return true;
+            }
+
+            public List<Entity> GetEntities()
+            {
+                return Entities;
+            }
+
+
+        }
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~ methods ~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+        public void DrawMeasuredJackPanel()
+        {
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            bool conti = true;
+            double MyScale = Atend.Base.Design.DProductProperties.AccessSelectBySoftwareCode((int)Atend.Control.Enum.ProductType.MeasuredJackPanel).Scale;
+            double MyCommentScale = Atend.Base.Design.DProductProperties.AccessSelectBySoftwareCode((int)Atend.Control.Enum.ProductType.MeasuredJackPanel).CommentScale;
+            DrawMeasuredJackPanelJig _DrawMeasuredJackPanelJig = new DrawMeasuredJackPanelJig(MyScale);
+            PromptResult pr;
+            while (conti)
+            {
+                pr = ed.Drag(_DrawMeasuredJackPanelJig);
+                if (pr.Status == PromptStatus.OK)
+                {
+                    conti = false;
+                    //draw entity on screen
+                    List<Entity> entities = _DrawMeasuredJackPanelJig.GetEntities();
+                    if (SaveMeasuredJackPanelData())
+                    {
+                        ObjectIdCollection OIC = new ObjectIdCollection();
+                        foreach (Entity ent in entities)
+                        {
+                            OIC.Add(Atend.Global.Acad.UAcad.DrawEntityOnScreen(ent, Atend.Control.Enum.AutoCadLayerName.GENERAL.ToString()));
+                            Atend.Base.Acad.AT_INFO information = new Atend.Base.Acad.AT_INFO(OIC[OIC.Count - 1]);
+                            information.Angle = 0;
+                            information.NodeCode = MeasuredPack.Code.ToString();
+                            information.NodeType = (int)Atend.Control.Enum.ProductType.MeasuredJackPanel;
+                            information.ParentCode = "";
+                            information.ProductCode = eMeasuredJackPanel.Code;
+                            information.Insert();
+                        }
+
+                        ObjectId GOI = Atend.Global.Acad.Global.MakeGroup(MeasuredPack.Code.ToString(), OIC);
+                        Atend.Base.Acad.AT_INFO information1 = new Atend.Base.Acad.AT_INFO(GOI);
+                        information1.Angle = 0;
+                        information1.NodeCode = MeasuredPack.Code.ToString();
+                        information1.NodeType = (int)Atend.Control.Enum.ProductType.MeasuredJackPanel;
+                        information1.ParentCode = "";
+                        information1.ProductCode = eMeasuredJackPanel.Code;
+                        information1.Insert();
+
+
+                        eMeasuredJackPanel.Comment += " : " + eMeasuredJackPanel.Count.ToString();
+                        ObjectId txtOI = Atend.Global.Acad.UAcad.DrawEntityOnScreen(Atend.Global.Acad.UAcad.WriteNote(eMeasuredJackPanel.Comment, new Point3d(_DrawMeasuredJackPanelJig.BasePoint.X, _DrawMeasuredJackPanelJig.BasePoint.Y, 0), MyCommentScale), Atend.Control.Enum.AutoCadLayerName.GENERAL.ToString());
+
+                        Atend.Base.Acad.AT_INFO GroupInfo1 = new Atend.Base.Acad.AT_INFO(txtOI);
+                        GroupInfo1.ParentCode = MeasuredPack.Code.ToString();
+                        GroupInfo1.NodeCode = "";
+                        GroupInfo1.NodeType = (int)Atend.Control.Enum.ProductType.Comment;
+                        GroupInfo1.ProductCode = 0;
+                        GroupInfo1.Insert();
+
+                        Atend.Base.Acad.AT_SUB GroupSub = new Atend.Base.Acad.AT_SUB(GOI);
+                        GroupSub.SubIdCollection.Add(txtOI);
+                        GroupSub.Insert();
+
+
+
+                    }
+                }
+                else
+                {
+                    conti = false;
+                }
+            }
+
+        }
+
+        private bool SaveMeasuredJackPanelData()
+        {
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            OleDbConnection aConnection = new OleDbConnection(Atend.Control.ConnectionString.AccessCnString);
+            OleDbTransaction aTransaction;
+
+            try
+            {
+                aConnection.Open();
+                aTransaction = aConnection.BeginTransaction();
+
+                try
+                {
+
+                    if (!UseAccess)
+                    {
+                        if (!eMeasuredJackPanel.AccessInsert(aTransaction, aConnection, true, true))
+                        {
+                            throw new System.Exception("eMeasuredJackPanel.AccessInsert failed");
+                        }
+
+
+                        //WENT TO
+                        //if (!Atend.Base.Equipment.EContainerPackage.SentFromLocalToAccess(eMeasuredJackPanel.XCode, (int)Atend.Control.Enum.ProductType.MeasuredJackPanel, eMeasuredJackPanel.Code, aTransaction, aConnection))
+                        //{
+                        //    throw new System.Exception("SentFromLocalToAccess failed");
+                        //}
+
+                    }
+
+                    MeasuredPack.Count = 1;
+                    MeasuredPack.IsExistance = Existance;
+                    MeasuredPack.LoadCode = 0;
+                    MeasuredPack.NodeCode = new Guid();
+                    MeasuredPack.Number = "Measured";
+                    MeasuredPack.ParentCode = new Guid();
+                    MeasuredPack.ProductCode = eMeasuredJackPanel.Code;
+                    MeasuredPack.ProjectCode = ProjectCode;
+                    MeasuredPack.Type = (int)Atend.Control.Enum.ProductType.MeasuredJackPanel;
+                    if (!MeasuredPack.AccessInsert(aTransaction, aConnection))
+                    {
+                        throw new System.Exception("MeasuredPack.AccessInsert failed");
+                    }
+
+
+
+                }
+                catch (System.Exception ex1)
+                {
+                    ed.WriteMessage("ERROR SaveMeasuredJackPanelData 02: {0}", ex1.Message);
+                    aTransaction.Rollback();
+                    aConnection.Close();
+                    return false;
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                ed.WriteMessage("ERROR SaveMeasuredJackPanelData 01: {0}", ex.Message);
+                aConnection.Close();
+                return false;
+            }
+
+            aTransaction.Commit();
+            aConnection.Close();
+
+            #region Not to Get Green
+
+            Atend.Base.Acad.AcadGlobal.MeasuredJackPanelData.UseAccess = true;
+            //UseAccess = true;
+
+            #endregion
+
+            return true;
+
+        }
+
+        public bool UpdateMeasuredJackPanelData(Guid EXCode)
+        {
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            OleDbTransaction aTransaction;
+            OleDbConnection aConnection = new OleDbConnection(Atend.Control.ConnectionString.AccessCnString);
+            try
+            {
+                aConnection.Open();
+                aTransaction = aConnection.BeginTransaction();
+                try
+                {
+                    MeasuredPack = Atend.Base.Design.DPackage.AccessSelectByCode(EXCode);
+                    if (!UseAccess)
+                    {
+                        if (!eMeasuredJackPanel.AccessInsert(aTransaction, aConnection, true, true))
+                        {
+                            throw new System.Exception("eMeasuredJackPanel.AccessInsert failed");
+                        }
+                    }
+                    MeasuredPack.IsExistance = Existance;
+                    MeasuredPack.ProjectCode = ProjectCode;
+                    MeasuredPack.ProductCode = eMeasuredJackPanel.Code;
+                    MeasuredPack.Number = "";
+                    if (MeasuredPack.AccessUpdate(aTransaction, aConnection))
+                    {
+                        Atend.Base.Acad.AT_INFO atinfo = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(selectedObjectId);
+                        atinfo.ProductCode = eMeasuredJackPanel.Code;
+                        atinfo.Insert();
+                    }
+                    else
+                    {
+                        throw new System.Exception("MeasuredJackPanelPack.AccessInsert2 failed");
+                    }
+
+                }
+                catch (System.Exception ex1)
+                {
+                    ed.WriteMessage("ERROR UpdateMeasuredJackPanel 01(transaction) : {0} \n", ex1.Message);
+                    aTransaction.Rollback();
+                    aConnection.Close();
+                    return false;
+
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                ed.WriteMessage("ERROR UpdateMeasuredJackPanel 01 : {0} \n", ex.Message);
+                aConnection.Close();
+                return false;
+            }
+
+            aTransaction.Commit();
+            aConnection.Close();
+            return true;
+        }
+
+        public static bool DeleteMeasuredJackPanelData(ObjectId MeasuredJackPanelOI)
+        {
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            try
+            {
+                ObjectId id = Atend.Global.Acad.UAcad.GetEntityGroup(MeasuredJackPanelOI);
+                ObjectIdCollection Collection = Atend.Global.Acad.UAcad.GetGroupSubEntities(id);
+                foreach (ObjectId sub in Collection)
+                {
+                    Atend.Base.Acad.AT_SUB EntityS = Atend.Base.Acad.AT_SUB.SelectBySelectedObjectId(sub);
+                    foreach (ObjectId oisub in EntityS.SubIdCollection)
+                    {
+                        Atend.Base.Acad.AT_INFO atinfo = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(oisub);
+                        if (atinfo.ParentCode != "NONE" && atinfo.NodeType == (int)Atend.Control.Enum.ProductType.HeaderCabel)
+                        {
+                            Atend.Base.Acad.AT_SUB Sub = Atend.Base.Acad.AT_SUB.SelectBySelectedObjectId(oisub);
+                            foreach (ObjectId oi in Sub.SubIdCollection)
+                            {
+                                Atend.Base.Acad.AT_INFO atinfo2 = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(oi);
+                                if (atinfo2.ParentCode != "NONE" && atinfo2.NodeType == (int)Atend.Control.Enum.ProductType.GroundCabel)
+                                {
+                                    if (!Atend.Base.Design.DBranch.AccessDelete(new Guid(atinfo2.NodeCode.ToString())))
+                                    {
+                                        throw new System.Exception("Error In Delete dbranch\n");
+                                    }
+                                }
+                            }
+                            if (!Atend.Base.Design.DPackage.AccessDelete(new Guid(atinfo.NodeCode.ToString())))
+                            {
+                                throw new System.Exception("Error In Delete dpackage_headercabel\n");
+                            }
+                        }
+                    }
+                }
+                //delete MeasuredJackPanel
+                Atend.Base.Acad.AT_INFO conductorinfo = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(MeasuredJackPanelOI);
+                if (!Atend.Base.Design.DPackage.AccessDelete(new Guid(conductorinfo.NodeCode.ToString())))
+                {
+                    throw new System.Exception("Error In Delete dpackage_measure\n");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                ed.WriteMessage("Data ERROR MeasuredJackPanel : {0} \n", ex.Message);
+                return false;
+            }
+            return true;
+        }
+
+        public static bool DeleteMeasuredJackPanel(ObjectId MeasuredJackPanelOI)
+        {
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            try
+            {
+                ObjectId id = Atend.Global.Acad.UAcad.GetEntityGroup(MeasuredJackPanelOI);
+                ObjectIdCollection Collection = Atend.Global.Acad.UAcad.GetGroupSubEntities(id);
+                foreach (ObjectId subcolect in Collection)
+                {
+                    Atend.Base.Acad.AT_SUB EntityS = Atend.Base.Acad.AT_SUB.SelectBySelectedObjectId(subcolect);
+                    foreach (ObjectId oisub in EntityS.SubIdCollection)
+                    {
+                        Atend.Base.Acad.AT_INFO atinfo = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(oisub);
+                        if (atinfo.ParentCode != "NONE" && atinfo.NodeType == (int)Atend.Control.Enum.ProductType.HeaderCabel)
+                        {
+                            Atend.Base.Acad.AT_SUB sub = Atend.Base.Acad.AT_SUB.SelectBySelectedObjectId(oisub);
+                            foreach (ObjectId objsub in sub.SubIdCollection)
+                            {
+                                Atend.Base.Acad.AT_INFO at_info1 = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(objsub);
+                                if (at_info1.ParentCode != "NONE" && at_info1.NodeType == (int)Atend.Control.Enum.ProductType.GroundCabel)
+                                {
+                                    //Delete Comment 
+                                    Atend.Base.Acad.AT_SUB subBranch = Atend.Base.Acad.AT_SUB.SelectBySelectedObjectId(objsub);
+                                    foreach (ObjectId collect in subBranch.SubIdCollection)
+                                    {
+                                        Atend.Base.Acad.AT_INFO atinfocom = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(collect);
+                                        if (atinfocom.ParentCode != "NONE" && atinfocom.NodeType == (int)Atend.Control.Enum.ProductType.Comment)
+                                        {
+                                            if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(collect))
+                                            {
+                                                throw new System.Exception("Error In Delete Cabel Comment\n");
+                                            }
+                                        }
+                                        //Delete From AT_SUB other headercabel or kablSho
+                                        if (atinfocom.ParentCode != "NONE" && (atinfocom.NodeType == (int)Atend.Control.Enum.ProductType.HeaderCabel || atinfocom.NodeType == (int)Atend.Control.Enum.ProductType.KablSho) && collect != oisub)
+                                        {
+                                            Atend.Base.Acad.AT_SUB.RemoveFromAT_SUB(objsub, collect);
+                                        }
+                                    }
+
+                                    if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(objsub))
+                                    {
+                                        throw new System.Exception("Error In Delete Cabel\n");
+                                    }
+                                }
+                                if (at_info1.ParentCode != "NONE" && at_info1.NodeType == (int)Atend.Control.Enum.ProductType.Conductor)
+                                {
+                                    Atend.Base.Acad.AT_SUB subBranch = Atend.Base.Acad.AT_SUB.SelectBySelectedObjectId(objsub);
+                                    foreach (ObjectId collect in subBranch.SubIdCollection)
+                                    {
+                                        Atend.Base.Acad.AT_INFO atinfo03 = Atend.Base.Acad.AT_INFO.SelectBySelectedObjectId(collect);
+                                        if (atinfo03.ParentCode != "NONE" && atinfo03.NodeType == (int)Atend.Control.Enum.ProductType.Comment)
+                                        {
+                                            if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(collect))
+                                            {
+                                                throw new System.Exception("Error In Delete Conductor Comment\n");
+                                            }
+                                        }
+                                        //Delete From AT_SUB other headercabel
+                                        if (atinfo03.ParentCode != "NONE" && atinfo03.NodeType == (int)Atend.Control.Enum.ProductType.HeaderCabel && collect != oisub)
+                                        {
+                                            Atend.Base.Acad.AT_SUB.RemoveFromAT_SUB(objsub, collect);
+                                        }
+                                    }
+
+                                    if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(objsub))
+                                    {
+                                        throw new System.Exception("Error In Delete Conductor\n");
+                                    }
+                                }
+                                if (at_info1.ParentCode != "NONE" && at_info1.NodeType == (int)Atend.Control.Enum.ProductType.Comment)
+                                {
+                                    if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(objsub))
+                                    {
+                                        throw new System.Exception("Error In Delete Comment\n");
+                                    }
+                                }
+                            }
+                            if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(oisub))
+                            {
+                                throw new System.Exception("Error In Delete HeaderCabel\n");
+                            }
+                        }
+                    }
+                }
+
+                //+++
+                if (!Atend.Global.Acad.AcadRemove.DeleteEntityByObjectId(MeasuredJackPanelOI))
+                {
+                    throw new System.Exception("GRA while delete MeasureJackPanel \n");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                ed.WriteMessage("GRA ERROR MeasuredJackPanel: {0} \n", ex.Message);
+                return false;
+            }
+            return true;
+        }
+
+
+    }
+}

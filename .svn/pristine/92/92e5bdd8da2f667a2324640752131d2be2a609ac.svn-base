@@ -1,0 +1,700 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using System.Collections;
+using Autodesk.AutoCAD.EditorInput;
+
+namespace Atend.Equipment
+{
+    public partial class frmDisconnector02 : Form
+    {
+        public int ProductCode = -1;
+        Guid SelectedDisconnectorXCode = Guid.Empty;
+        public bool IsDefault = false;
+        int Code = -1;
+        DataColumn TypeName = new DataColumn("Name", typeof(string));
+        DataColumn TypeCode = new DataColumn("Code", typeof(int));
+        DataTable TypeTbl = new DataTable();
+        bool ForceToClose = false;
+
+        public frmDisconnector02()
+        {
+            Editor ed = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor;
+            ed.WriteMessage("\nchecking.....\n");
+            if (!Atend.Global.Acad.DrawEquips.Dicision.IsHere())
+            {
+                if (!Atend.Global.Acad.DrawEquips.Dicision.IsThere())
+                {
+                    //System.Diagnostics.Process[] prs = System.Diagnostics.Process.GetProcesses();
+                    //foreach (System.Diagnostics.Process pr in prs)
+                    //{
+                    //    if (pr.ProcessName == "acad")
+                    //    {
+                    //        pr.CloseMainWindow();
+                    //    }
+                    //}
+                    Atend.Global.Acad.Notification notification = new Atend.Global.Acad.Notification();
+                    notification.Title = "شناسایی قفل";
+                    notification.Msg = "لطفا وضعیت قفل را بررسی نمایید ";
+                    notification.infoCenterBalloon();
+
+                    ForceToClose = true;
+
+                }
+            }
+
+            InitializeComponent();
+            Atend.Control.Common.selectedProductCode = -1;
+
+            TypeTbl.Columns.Add(TypeCode);
+            TypeTbl.Columns.Add(TypeName);
+
+            DataRow dr1 = TypeTbl.NewRow();
+            dr1["Name"] = "سکسیونر هوایی غیر قابل قطع زیر بار";
+            dr1["Code"] = 1;
+
+            DataRow dr2 = TypeTbl.NewRow();
+            dr2["Name"] = "سکسیونر هوایی قابل قطع زیر بار";
+            dr2["Code"] = 2;
+
+            DataRow dr3 = TypeTbl.NewRow();
+            dr3["Name"] = "سکسیونر SF6 قابل قطع زیر بار";
+            dr3["Code"] = 3;
+
+            TypeTbl.Rows.Clear();
+            TypeTbl.Rows.Add(dr1);
+            TypeTbl.Rows.Add(dr2);
+            TypeTbl.Rows.Add(dr3);
+
+        }
+
+        private void Reset()
+        {
+            SelectedDisconnectorXCode = Guid.Empty;
+            cboDisconnectorType.SelectedIndex = 0;
+            txtName.Text = string.Empty;
+            txtAmper.Text = string.Empty;
+            txtComment.Text = string.Empty;
+            IsDefault = false;
+            tsbIsDefault.Checked = false;
+            Atend.Control.Common.selectedProductCode = -1;
+            txtBackUpName.Text = string.Empty;
+            txtCode.Text = string.Empty;
+            ProductCode = -1;
+            Code = -1;
+            gvSelectedOperation.Rows.Clear();
+            ClearCheckAndGrid(tvOperation, gvSelectedOperation);
+            ClearCheckAndGrid(tvEquipment, gvSelectedEquipment);
+        }
+
+        private void Delete()
+        {
+            string name = string.Empty;
+            if (!Atend.Global.Utility.UBinding.ExistInSubEquip(SelectedDisconnectorXCode, out name))
+            {
+                MessageBox.Show(string.Format("حذف بدلیل وجود در تجهیزات جانبی امکانپذیر نمی باشد\n تجهیز موردنظر زیر تجهیز '{0}' میباشد ", name), "خطا");
+
+                return;
+            }
+            //Atend.Base.Equipment.EProductPackage _ProductPackage = Atend.Base.Equipment.EProductPackage.SelectByXCode(SelectedDisconnectorXCode);
+            //if (_ProductPackage.Code != -1)
+            //{
+            //    MessageBox.Show("حذف  بدلیل وجود در تجهیزات جانبی امکانپذیر نمی باشد ", "خطا");
+            //    return;
+            //}
+
+            if (MessageBox.Show("آیا مایل به حذف کردن اطلاعات می باشید؟", "خطا", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (SelectedDisconnectorXCode != Guid.Empty)
+                {
+                    if (Atend.Base.Equipment.EDisconnector.DeleteX(SelectedDisconnectorXCode))
+                        Reset();
+                    else
+                        MessageBox.Show("امکان حذف کردن اطلاعات نمی باشد", "خطا");
+                }
+                else
+                    MessageBox.Show("لطفاً گزینه مورد نظر را انتخاب نمایید", "حذف");
+            }
+
+        }
+
+        private bool CheckStatuseOfAccessChangeDefault()
+        {
+            Autodesk.AutoCAD.EditorInput.Editor ed = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor;
+            //ed.WriteMessage("AccessChangeDefault={0}\n", Atend.Control.Common.AccessChangeDefault);
+            if (!Atend.Control.Common.AccessChangeDefault)
+            {
+                if (SelectedDisconnectorXCode == Guid.Empty && IsDefault)
+                {
+                    MessageBox.Show("کاربر گرامی شما اجازه ثبت تجهیز به صورت پیش فرض ندارید", "خطا");
+                    return false;
+                }
+                else
+                {
+                    Atend.Base.Equipment.EDisconnector Equip = Atend.Base.Equipment.EDisconnector.SelectByXCode(SelectedDisconnectorXCode);
+                    if (Equip.IsDefault || IsDefault)
+                    {
+                        MessageBox.Show("کاربر گرامی شما اجازه ویرایش  تجهیز به صورت پیش فرض ندارید", "خطا");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private bool Validation()
+        {
+            //if (Atend.Control.Common.selectedProductCode == -1)
+            //{
+            //    MessageBox.Show("لطفا ابتدا یک کالا را از پشتیبان انتخاب کنید", "خطا");
+
+            //    return false;
+            //}
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("لطفا نام را مشخص کنید", "خطا");
+                txtName.Focus();
+                return false;
+            }
+            if (Atend.Base.Equipment.EDisconnector.SearchByName(txtName.Text) == true && SelectedDisconnectorXCode == Guid.Empty)
+            {
+                MessageBox.Show("نام قبلا استفاده شده است", "خطا");
+                txtName.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtAmper.Text))
+            {
+                MessageBox.Show("لطفا آمپر را مشخص نمایید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
+                txtAmper.Focus();
+                txtAmper.Select(0, txtAmper.Text.Length);
+                return false;
+            }
+            if (!Atend.Control.NumericValidation.DoubleConverter(txtAmper.Text))
+            {
+                MessageBox.Show("لطفاً آمپر را با فرمت مناسب وارد نمایید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
+                txtAmper.Focus();
+                txtAmper.Select(0, txtAmper.Text.Length);
+                return false;
+            }
+
+            //if (gvSelectedOperation.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("لطفا سیستم زمینی را مشخص نمایید","خطا");
+            //    gvSelectedOperation.Focus();
+            //    return false;
+            //}
+
+            if (string.IsNullOrEmpty(cboDisconnectorType.Text))
+            {
+                MessageBox.Show("لطفا نوع را مشخص نمایید", "خطا");
+                cboDisconnectorType.Focus();
+                return false;
+            }
+            Atend.Base.Equipment.EDisconnector disconnector = Atend.Base.Equipment.EDisconnector.CheckForExist(Convert.ToDouble(txtAmper.Text), Convert.ToByte(cboDisconnectorType.SelectedValue));
+            if (disconnector.Code != -1 && SelectedDisconnectorXCode == Guid.Empty)
+            {
+                if (MessageBox.Show("سکسیونر با مشخصات داده شده موجود میباشد\n\n سکسیونر با مشخصات فوق : " + disconnector.Name + "\n\n" + "آیا مایل به ادامه  ثبت می باشید؟", "خطا", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    txtAmper.Focus();
+                    return false;
+                }
+            }
+
+            if (!Atend.Global.Utility.UBinding.CheckGridValidation(gvSelectedOperation, 3))
+            {
+                MessageBox.Show("لطفا تعداد آماده سازی را با فرمت مناسب وارد نمایید", "خطا");
+                gvSelectedOperation.Focus();
+                return false;
+            }
+            if (!Atend.Global.Utility.UBinding.CheckGridValidation(gvSelectedEquipment, 2))
+            {
+                MessageBox.Show("لطفا تعداد تجهیزات جانبی را با فرمت مناسب وارد نمایید", "خطا");
+                gvSelectedEquipment.Focus();
+                return false;
+            }
+
+            for (int j = 0; j < gvSelectedEquipment.Rows.Count; j++)
+            {
+                Atend.Base.Equipment.EProductPackage _EProductPackage = new Atend.Base.Equipment.EProductPackage();
+                _EProductPackage.XCode = new Guid(gvSelectedEquipment.Rows[j].Cells[0].Value.ToString());
+                _EProductPackage.Count = Convert.ToInt32(gvSelectedEquipment.Rows[j].Cells[2].Value.ToString());
+                _EProductPackage.TableType = Convert.ToInt16(gvSelectedEquipment.Rows[j].Cells[3].Value.ToString());
+
+                if (Atend.Base.Equipment.EContainerPackage.FindLoopNode(SelectedDisconnectorXCode, Convert.ToInt32(Atend.Control.Enum.ProductType.Disconnector), _EProductPackage.XCode, _EProductPackage.TableType))
+                {
+                    MessageBox.Show(string.Format("تجهیز '{0}' در زیر تجهیزات موجود می باشد", txtName.Text), "خطا");
+                    gvSelectedEquipment.Focus();
+                    return false;
+                }
+            }
+
+            return CheckStatuseOfAccessChangeDefault();
+            // return true;
+
+        }
+
+        private void Save()
+        {
+            txtName.Focus();
+
+            Atend.Base.Equipment.EDisconnector disconnector = new Atend.Base.Equipment.EDisconnector();
+            ArrayList EOperation = new ArrayList();
+            ArrayList EPackageProduct = new ArrayList();
+            disconnector.ProductCode = Atend.Control.Common.selectedProductCode;
+            disconnector.Amper = double.Parse(txtAmper.Text);
+            disconnector.Type = Convert.ToByte(cboDisconnectorType.SelectedValue);
+            disconnector.Comment = txtComment.Text;
+            disconnector.Name = txtName.Text;
+            disconnector.IsDefault = IsDefault;
+            disconnector.Code = Code;
+            //Equipment
+            for (int j = 0; j < gvSelectedEquipment.Rows.Count; j++)
+            {
+                Atend.Base.Equipment.EProductPackage _EProductPackage = new Atend.Base.Equipment.EProductPackage();
+                _EProductPackage.XCode = new Guid(gvSelectedEquipment.Rows[j].Cells[0].Value.ToString());
+                _EProductPackage.Count = Convert.ToInt32(gvSelectedEquipment.Rows[j].Cells[2].Value.ToString());
+                _EProductPackage.TableType = Convert.ToInt16(gvSelectedEquipment.Rows[j].Cells[3].Value.ToString());
+                EPackageProduct.Add(_EProductPackage);
+            }
+            disconnector.EquipmentList = EPackageProduct;
+
+            //Operation
+            for (int i = 0; i < gvSelectedOperation.Rows.Count; i++)
+            {
+                Atend.Base.Equipment.EOperation _EOperation = new Atend.Base.Equipment.EOperation();
+                _EOperation.ProductID = Convert.ToInt32(gvSelectedOperation.Rows[i].Cells[0].Value);
+                _EOperation.Count = Convert.ToDouble(gvSelectedOperation.Rows[i].Cells[3].Value);
+                EOperation.Add(_EOperation);
+
+            }
+            disconnector.OperationList = EOperation;
+
+
+            if (SelectedDisconnectorXCode == Guid.Empty)
+            {
+                if (disconnector.InsertX())
+                    Reset();
+                else
+                    MessageBox.Show("امکان ثبت کردن اطلاعات نمی باشد", "خطا");
+            }
+            else
+            {
+                disconnector.XCode = SelectedDisconnectorXCode;
+                if (disconnector.UpdateX())
+                    Reset();
+                else
+                    MessageBox.Show("امکان به روز رسانی اطلاعات نمی باشد", "خطا");
+
+            }
+
+
+        }
+
+        public void BindDataToOwnControl(Guid XCode)
+        {
+            SelectedDisconnectorXCode = XCode;
+
+
+            Atend.Base.Equipment.EDisconnector disconnector = Atend.Base.Equipment.EDisconnector.SelectByXCode(XCode);
+            //Atend.Base.Base.BProduct product = Atend.Base.Base.BProduct.Select_ById(disconnector.ProductCode);
+            Atend.Control.Common.selectedProductCode = disconnector.ProductCode;
+            SelectProduct();
+            SelectedDisconnectorXCode = disconnector.XCode;
+            txtName.Text = disconnector.Name;
+            txtAmper.Text = Convert.ToString(Math.Round(disconnector.Amper, 4));
+            txtComment.Text = disconnector.Comment;
+            tsbIsDefault.Checked = disconnector.IsDefault;
+            cboDisconnectorType.SelectedValue = Convert.ToInt16(disconnector.Type);
+            Code = disconnector.Code;
+            BindTreeViwAndGridEquipment();
+
+
+        }
+
+        private void BindToDisconnectorType()
+        {
+            //cboDisconnectorType.SelectedIndex = 0;
+            cboDisconnectorType.DisplayMember = "Name";
+            cboDisconnectorType.ValueMember = "Code";
+            cboDisconnectorType.DataSource = TypeTbl;
+        }
+
+        private void frmDisconnector_Load(object sender, EventArgs e)
+        {
+            if (ForceToClose)
+                this.Close();
+
+            //Atend.Base.Base.BProduct product = Atend.Base.Base.BProduct.Select_ById(ProductCode);
+            //txtName.Text = product.Name;
+            BindToDisconnectorType();
+            if (cboDisconnectorType.Items.Count > 0)
+            {
+                cboDisconnectorType.SelectedIndex = 0;// cboDisconnectorType.Items.Count - 1;
+            }
+
+            BindDataToTreeView();
+            BindDataToTreeViewOperation();
+        }
+
+        private void BindDataToTreeViewOperation()
+        {
+            DataTable ProductType = Atend.Base.Base.BProduct.SelectByTypeX(Convert.ToInt32(Atend.Control.Enum.ProductType.Operation));
+            foreach (DataRow dr in ProductType.Rows)
+            {
+                TreeNode node = new TreeNode();
+                node.Text = dr["Name"].ToString();
+                node.Tag = dr["ID"].ToString();
+                tvOperation.Nodes.Add(node);
+            }
+        }
+
+        private void جدیدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void ذخیرهسازیToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Validation())
+            {
+                Save();
+            }
+        }
+
+        private void ذخیرهسازیوخروجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Validation())
+            {
+                Save();
+                Close();
+            }
+        }
+
+        private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckStatuseOfAccessChangeDefault())
+                Delete();
+        }
+
+        private void جستجوToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDisconnectorSearch02 frmdisconnectorSearch = new frmDisconnectorSearch02(this);
+            Autodesk.AutoCAD.ApplicationServices.Application.ShowModalDialog(frmdisconnectorSearch);
+        }
+
+        private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnNewDisconnectorType_Click(object sender, EventArgs e)
+        {
+            //frmDisconnectorlType frmdisconnectorType = new frmDisconnectorlType();
+            //frmdisconnectorType.ShowDialog();
+            //BindToDisconnectorType();
+
+        }
+
+        private void BindTreeViwAndGridEquipment()
+        {
+            Editor ed = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor;
+
+            //EQUIPMENT
+            ClearCheckAndGrid(tvEquipment, gvSelectedEquipment);
+            ClearCheckAndGrid(tvEquipment, gvSelectedEquipment);
+            gvSelectedEquipment.Refresh();
+            //ed.WriteMessage("nodeKeysEPackage.Count:" + Atend.Base.Equipment.ECatOut.nodeKeysEPackage.Count.ToString() + "\n");
+            for (int i = 0; i < Atend.Base.Equipment.EDisconnector.nodeKeysEPackageX.Count; i++)
+            {
+                string s = Atend.Base.Equipment.EDisconnector.nodeKeysEPackageX[i].ToString();
+                foreach (TreeNode rootnode in tvEquipment.Nodes)
+                {
+
+                    foreach (TreeNode chileNode in rootnode.Nodes)
+                    {
+                        if (Atend.Base.Equipment.EDisconnector.nodeTypeEPackageX[i].ToString() == chileNode.Name.ToString())
+                        {
+                            if (chileNode.Tag.ToString() == s)
+                            {
+                                rootnode.BackColor = Color.FromArgb(203, 214, 235);
+                                chileNode.Checked = true;
+                                gvSelectedEquipment.Rows.Add();
+                                gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[0].Value = chileNode.Tag;
+                                gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[1].Value = chileNode.Text;
+                                gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[2].Value = Atend.Base.Equipment.EDisconnector.nodeCountEPackageX[i].ToString();
+                                gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[3].Value = chileNode.Name;
+
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            //************
+            //Operation
+            ClearCheckAndGrid(tvOperation, gvSelectedOperation);
+            gvSelectedOperation.Refresh();
+            for (int i = 0; i < Atend.Base.Equipment.EDisconnector.nodeKeysX.Count; i++)
+            {
+                Atend.Base.Equipment.EOperation Operation = ((Atend.Base.Equipment.EOperation)Atend.Base.Equipment.EDisconnector.nodeKeysX[i]);
+                string s = Operation.ProductID.ToString();
+
+                foreach (TreeNode rootnode in tvOperation.Nodes)
+                {
+                    if (rootnode.Tag.ToString() == s)
+                    {
+                        rootnode.Checked = true;
+                        gvSelectedOperation.Rows.Add();
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[0].Value = rootnode.Tag;
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[1].Value = rootnode.Text;
+                        Atend.Base.Base.BUnit Unit = Atend.Base.Base.BUnit.Select_ByProductID(Convert.ToInt32(rootnode.Tag.ToString()));
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[2].Value = Unit.Name;
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[3].Value = Operation.Count;
+
+                    }
+
+                }
+            }
+        }
+
+        private void BindDataToTreeView()
+        {
+            Atend.Global.Utility.UBinding.BindDataToTreeViewX(tvEquipment);
+        }
+
+        private void ClearCheckAndGrid(TreeView treeView, DataGridView dataGridView)
+        {
+            foreach (TreeNode rootNode in treeView.Nodes)
+            {
+                rootNode.Checked = false;
+                foreach (TreeNode childNode in rootNode.Nodes)
+                {
+                    childNode.Checked = false;
+                }
+            }
+
+
+
+            for (int i = dataGridView.Rows.Count - 1; i >= 0; i--)
+            {
+                dataGridView.Rows.RemoveAt(i);
+            }
+            //gvSelectedProduct.Rows.Clear();
+            gvSelectedOperation.Refresh();
+        }
+
+        private void btnInsertOperation_Click(object sender, EventArgs e)
+        {
+            //gvSelectedOperation.Rows.Clear();
+            for (int i = 0; i < tvOperation.Nodes.Count; i++)
+            {
+
+                if (tvOperation.Nodes[i].Checked)
+                {
+                    bool sw = false;
+                    for (int j = 0; j < gvSelectedOperation.Rows.Count; j++)
+                    {
+                        if (gvSelectedOperation.Rows[j].Cells[0].Value.ToString() == tvOperation.Nodes[i].Tag.ToString())
+                            sw = true;
+                    }
+
+                    if (!sw)
+                    {
+                        gvSelectedOperation.Rows.Add();
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[0].Value = tvOperation.Nodes[i].Tag.ToString();
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[1].Value = tvOperation.Nodes[i].Text.ToString();
+                        Atend.Base.Base.BUnit Unit = Atend.Base.Base.BUnit.Select_ByProductID(Convert.ToInt32(tvOperation.Nodes[i].Tag.ToString()));
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[2].Value = Unit.Name;
+                        gvSelectedOperation.Rows[gvSelectedOperation.Rows.Count - 1].Cells[3].Value = 1;
+                    }
+                }
+            }
+        }
+
+        private void SelectProduct()
+        {
+            Atend.Base.Base.BProduct product = Atend.Base.Base.BProduct.Select_ByIdX(Atend.Control.Common.selectedProductCode);
+            txtName.Text = product.Name;
+            txtCode.Text = product.Code.ToString();
+            txtBackUpName.Text = product.Name;
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+
+            Atend.Base.frmProductSearch frmproductSearch = new Atend.Base.frmProductSearch(Atend.Control.Enum.ProductType.Disconnector);
+
+            Autodesk.AutoCAD.ApplicationServices.Application.ShowModalDialog(frmproductSearch);
+            if (Atend.Control.Common.selectedProductCode != -1)
+            {
+                SelectProduct();
+            }
+        }
+
+        private void tsbIsDefault_Click(object sender, EventArgs e)
+        {
+            if (IsDefault)
+            {
+                IsDefault = false;
+                tsbIsDefault.Checked = false;
+            }
+            else
+            {
+                IsDefault = true;
+                tsbIsDefault.Checked = true;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (gvSelectedEquipment.Rows.Count > 0)
+            {
+                foreach (TreeNode rootnode in tvOperation.Nodes)
+                {
+                    if (rootnode.Tag.ToString() == gvSelectedOperation.Rows[gvSelectedOperation.CurrentRow.Index].Cells[0].Value.ToString())
+                    {
+                        rootnode.Checked = false;
+                    }
+                }
+
+                gvSelectedOperation.Rows.RemoveAt(gvSelectedOperation.CurrentRow.Index);
+            }
+        }
+
+        private void tsbShare_Click(object sender, EventArgs e)
+        {
+
+            if (SelectedDisconnectorXCode != Guid.Empty)
+            {
+                if (Atend.Base.Equipment.EContainerPackage.ShareOnServer(Convert.ToInt32(Atend.Control.Enum.ProductType.Disconnector), SelectedDisconnectorXCode))
+                {
+                    Atend.Base.Equipment.EDisconnector Disconnector = Atend.Base.Equipment.EDisconnector.SelectByXCode(SelectedDisconnectorXCode);
+                    Code = Disconnector.Code;
+                    MessageBox.Show("به اشتراک گذاری با موفقیت انجام شد");
+                }
+                else
+                {
+                    MessageBox.Show("خطا در به اشتراک گذاری .");
+                }
+            }
+            else
+            {
+                MessageBox.Show("لطفا تجهیز مورد نظر را انتخاب کنید");
+            }
+
+            //if (SelectedDisconnectorXCode != Guid.Empty)
+            //{
+            //    if (Atend.Base.Equipment.EDisconnector.ShareOnServer(SelectedDisconnectorXCode))
+            //    {
+            //        Atend.Base.Equipment.EDisconnector d1 = Atend.Base.Equipment.EDisconnector.SelectByXCode(SelectedDisconnectorXCode);
+            //        Code = d1.Code;
+            //        MessageBox.Show("به اشتراک گذاری با موفقیت انجام شد");
+            //    }
+            //    else
+            //        MessageBox.Show("خطا در به اشتراک گذاری . لطفاً دوباره سعی کنید");
+            //}
+            //else
+            //    MessageBox.Show("لطفا تجهیز مورد نظر را انتخاب کنید");
+        }
+
+        private void SearchOperation()
+        {
+            tvOperation.Nodes.Clear();
+            DataTable ProductType = Atend.Base.Base.BProduct.SelectByNameTypeX(Convert.ToInt32(Atend.Control.Enum.ProductType.Operation), txtOperationName.Text);
+
+            foreach (DataRow dr in ProductType.Rows)
+            {
+                TreeNode node = new TreeNode();
+                node.Text = dr["Name"].ToString();
+                node.Tag = dr["ID"].ToString();
+                tvOperation.Nodes.Add(node);
+            }
+        }
+
+        private void txtOperationName_TextChanged(object sender, EventArgs e)
+        {
+            SearchOperation();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchOperation();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Editor ed = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor;
+
+            //Equipment
+            Boolean canAdd = true;
+            for (int i = 0; i < tvEquipment.Nodes.Count; i++)
+            {
+                for (int j = 0; j < tvEquipment.Nodes[i].Nodes.Count; j++)
+                {
+                    if (tvEquipment.Nodes[i].Nodes[j].Checked)
+                    {
+                        canAdd = true;
+                        for (int k = 0; k < gvSelectedEquipment.Rows.Count; k++)
+                        {
+                            if ((gvSelectedEquipment.Rows[k].Cells[0].Value.ToString() == tvEquipment.Nodes[i].Nodes[j].Tag.ToString()) && (Convert.ToInt32(gvSelectedEquipment.Rows[k].Cells[3].Value.ToString()) == Convert.ToInt32(tvEquipment.Nodes[i].Nodes[j].Name.ToString())))
+                            {
+                                canAdd = false;
+                                //ed.WriteMessage("No Allow To Add Row\n");
+                            }
+                        }
+                        if (canAdd)
+                        {
+                            //ed.WriteMessage("AddRow\n");
+                            gvSelectedEquipment.Rows.Add();
+                            gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[0].Value = tvEquipment.Nodes[i].Nodes[j].Tag.ToString();
+                            gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[1].Value = tvEquipment.Nodes[i].Nodes[j].Text.ToString();
+                            gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[3].Value = tvEquipment.Nodes[i].Nodes[j].Name.ToString();
+                            gvSelectedEquipment.Rows[gvSelectedEquipment.Rows.Count - 1].Cells[2].Value = 1;
+
+                        }
+
+                    }
+                    else
+                    {
+                        for (int k = 0; k < gvSelectedEquipment.Rows.Count; k++)
+                        {
+                            if ((gvSelectedEquipment.Rows[k].Cells[0].Value.ToString() == tvEquipment.Nodes[i].Nodes[j].Tag.ToString()) && (Convert.ToInt32(gvSelectedEquipment.Rows[k].Cells[3].Value.ToString()) == Convert.ToInt32(tvEquipment.Nodes[i].Nodes[j].Name.ToString())))
+                            {
+                                //ed.WriteMessage("Name To Delete" + gvEquipment.Rows[k].Cells[1].Value.ToString() + "\n");
+                                gvSelectedEquipment.Rows.RemoveAt(k);
+
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (gvSelectedEquipment.Rows.Count > 0)
+            {
+                foreach (TreeNode rootnode in tvEquipment.Nodes)
+                {
+                    foreach (TreeNode childNode in rootnode.Nodes)
+                    {
+                        if (childNode.Tag.ToString() == gvSelectedEquipment.Rows[gvSelectedEquipment.CurrentRow.Index].Cells[0].Value.ToString())
+                        {
+                            childNode.Checked = false;
+                        }
+                    }
+                }
+
+                gvSelectedEquipment.Rows.RemoveAt(gvSelectedEquipment.CurrentRow.Index);
+            }
+        }
+
+    }
+}

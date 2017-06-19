@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49DB262E-74C7-4FB7-9CD8-BE4BE10ACD7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atend.Global</RootNamespace>
+    <AssemblyName>Atend.Global</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\accoremgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcCui, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\AcCui.dll</HintPath>
+    </Reference>
+    <Reference Include="acdbmgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\acdbmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcInfoCenterConn, Version=17.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcInfoCenterConn.DLL</HintPath>
+    </Reference>
+    <Reference Include="AcInfoCenterConn.resources, Version=17.2.0.0, Culture=en-US, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AcInfoCenterConn.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="acmgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2016\acmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AdInfoCenter, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AdInfoCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="AdWindows, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\AdWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dlls\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\ATEND\Dlls\WindowsBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acad\AcadConvert.cs" />
+    <Compile Include="Acad\AcadJigs.cs" />
+    <Compile Include="Acad\AcadLayer.cs" />
+    <Compile Include="Acad\AcadMove.cs" />
+    <Compile Include="Acad\AcadRemove.cs" />
+    <Compile Include="Acad\AcadUpdate.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawAirPost.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawBreaker.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawBreaker02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawBusCouplerDezhangtorCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawBusCouplerSecsionerCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawCatOut.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawCirclePole.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawConductor.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawConnectionPoint.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawConsol.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawDB.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawDezhangtorCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawDisConnector.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawDisConnector02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawFiles.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawForbidenArea.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawFrame.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawFuziblCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawGIS.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawGround.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawGroundCabel.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawGroundPost.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawHeaderCabel.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawJumper.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawKablsho.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawKalamp.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawKhazan.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawLight.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawMafsal.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawMeasureCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawMeasuredJackPanel.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawMiddleJackPanel.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawMiddleJackPanel02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawPhuse.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawPole.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawPolygonPole.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawReleCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawRod.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawSecsionerCell.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawSecsionerCell02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawSelfKeeper.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawStreetBox.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawTerminal.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawTransformer.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawWeekJackPanel.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawGround02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawGroundPost02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawTransformer02.cs" />
+    <Compile Include="Acad\DrawEquips\AcDrawWeekJackPanel02.cs" />
+    <Compile Include="Acad\Global.cs" />
+    <Compile Include="Acad\UAcad.cs" />
+    <Compile Include="Calculation\Electrical\CElectricalCrossSectionChane.cs" />
+    <Compile Include="Calculation\Electrical\CElectricalOutPut.cs" />
+    <Compile Include="Calculation\Electrical\ComplexMath.cs" />
+    <Compile Include="Calculation\Electrical\Load.cs" />
+    <Compile Include="Calculation\Electrical\LoadFlowOld.cs" />
+    <Compile Include="Calculation\General\General.cs" />
+    <Compile Include="Calculation\Mechanical\CAutoPoleInstallation.cs" />
+    <Compile Include="Calculation\Mechanical\CalcOptimalSagTension.cs" />
+    <Compile Include="Calculation\Mechanical\CalcOptimalSagTensionmaxF.cs" />
+    <Compile Include="Calculation\Mechanical\CalcOptimalSagTensionTest.cs" />
+    <Compile Include="Calculation\Mechanical\CCommon.cs" />
+    <Compile Include="Calculation\Mechanical\CMecanicalOutPut.cs" />
+    <Compile Include="Calculation\Mechanical\CMechanicalChange.cs" />
+    <Compile Include="Calculation\Mechanical\CAutoPoleInstallation02.cs" />
+    <Compile Include="Calculation\Mechanical\CVector.cs" />
+    <Compile Include="Calculation\Mechanical\SagTensionSave.cs" />
+    <Compile Include="Calculation\Sectioning.cs" />
+    <Compile Include="Design\frmDrawBranchCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawBranchCable.designer.cs">
+      <DependentUpon>frmDrawBranchCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawBranch.designer.cs">
+      <DependentUpon>frmDrawBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawBus.Designer.cs">
+      <DependentUpon>frmDrawBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawClamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawClamp.Designer.cs">
+      <DependentUpon>frmEditDrawClamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawClamp02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawClamp02.designer.cs">
+      <DependentUpon>frmDrawClamp02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEdiDrawHeaderCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEdiDrawHeaderCable.Designer.cs">
+      <DependentUpon>frmEdiDrawHeaderCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawHeaderCable02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawHeaderCable02.designer.cs">
+      <DependentUpon>frmDrawHeaderCable02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKablSho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmEditDrawKablSho.Designer.cs">
+      <DependentUpon>frmEditDrawKablSho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmDrawKablsho02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmDrawKablsho02.Designer.cs">
+      <DependentUpon>frmDrawKablsho02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmPostSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmPostSize.designer.cs">
+      <DependentUpon>frmPostSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UBinding.cs" />
+    <Compile Include="Utility\UInterface.cs" />
+    <Compile Include="Utility\UOtherOutPut.cs" />
+    <Compile Include="Utility\UReport.cs" />
+    <Compile Include="Utility\XXUTransfer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Design\frmDrawBranchCable.resx">
+      <DependentUpon>frmDrawBranchCable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawBranch.resx">
+      <DependentUpon>frmDrawBranch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawBus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawClamp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawClamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawClamp02.resx">
+      <DependentUpon>frmDrawClamp02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEdiDrawHeaderCable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEdiDrawHeaderCable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawHeaderCable02.resx">
+      <DependentUpon>frmDrawHeaderCable02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmEditDrawKablSho.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEditDrawKablSho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmDrawKablsho02.resx">
+      <DependentUpon>frmDrawKablsho02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmPostSize.resx">
+      <DependentUpon>frmPostSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atend.Base\Atend.Base.csproj">
+      <Project>{AB3BCF87-7222-4951-851F-7ABB831BA8C5}</Project>
+      <Name>Atend.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atend.Control\Atend.Control.csproj">
+      <Project>{83C9DE81-69D6-4F75-8801-ABE6CF1EFC09}</Project>
+      <Name>Atend.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atend.Report\Atend.Report.csproj">
+      <Project>{C24D787B-7454-4A10-82C2-9369D8BD721C}</Project>
+      <Name>Atend.Report</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

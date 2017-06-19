@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+using Autodesk.AutoCAD.Geometry;
+
+
+namespace Atend.Control
+{
+    public class Common
+    {
+        public static int DesignServerCode = 0;
+        public static float SelectedDesignScale = 0;
+        public static Guid SelectedAutocadObjectGuid = Guid.Empty;
+        public static bool flag = false;
+        public static int userCode = 0;
+        public static System.Data.DataTable AccessList = new System.Data.DataTable();
+        public static bool AccessChangeDefault = false;
+        public static bool Demo = false;
+        public static bool AccessProductPallet = false;
+        //public static DataTable StatuseCode = new DataTable();
+        public static String DesignName = "";//16.DWG
+        public static int DesignId = 0;
+        public static string Edition = "0";
+        public static String DesignBackGroundName = "";//DesignBackGround.DWG
+        public static string DesignFullAddress = "";//D:\AtendTempFile\16
+        public static string fullPath = string.Empty;
+        public static string AccessPath = string.Empty;
+        public static string NewAccessPath = string.Empty;
+        public static int selectedProductCode = 0;
+        public static bool IsClassicView = false;
+        public static Autodesk.AutoCAD.Windows.PaletteSet ps;
+        public static int IsExist = -1;
+        public static int ProjectCode = -1;
+        public static System.Data.DataTable dtConvertor;
+
+        public class NodeInformation
+        {
+            public string AutoCadId;
+            public Int64 ProductBlockId;
+            public string ProductBlockName;
+            public int ProductCode;
+            public double X;
+            public double Y;
+        }
+
+        public class Counters
+        {
+            public static int PoleCounter = -10;
+            public static int ConsolCounter = -10;
+            public static int ClampCounter = -10;
+            public static int HeadercableCounter = -10;
+            public static int KablshoCounter = -10;
+
+        }
+     
+
+
+    }
+}

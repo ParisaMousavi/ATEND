@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\Atend.Base\packages.config" />
+  <repository path="..\Atend.Control\packages.config" />
+  <repository path="..\Atend.Global\packages.config" />
+  <repository path="..\Atend.Report\packages.config" />
+  <repository path="..\Atend.UControls\packages.config" />
+  <repository path="..\Atend\packages.config" />
+</repositories>
